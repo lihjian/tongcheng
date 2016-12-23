@@ -1,0 +1,199 @@
+/**
+ * Created by admin on 2016/12/2.
+ */
+/**
+ * 定义加减商品和删除商品事件
+ */
+function init() {
+    $(".delete_a").on("click",function(){
+        $(this).parent("li").remove();
+        var id = $(this).parents("li").find("input").eq(0).val();
+        $.shop_remove(id)
+    })
+    $(".num_1").on("click",function () {
+        var num = $(this).parents("li").find('.num_text').val()
+        var price = $(this).parents("li").find("input").eq(1).val();
+        $(this).parents("li").find(".num_text").val(num - Number(price));
+        $("#tNum").text(Number($("#tNum").text()) - Number(price));
+
+        $("#tPrice").text(Number($("#tPrice").text())-Number(price))
+        $(this).parents("li").find(".num_text").trigger("change")
+    })
+    $(".num_2").on("click",function () {
+        var num = $(this).parents("li").find('.num_text').val()
+        var price = $(this).parents("li").find("input").eq(1).val();
+        $(this).parents("li").find(".num_text").val(Number(num) + Number(price));
+        $("#tNum").text(Number($("#tNum").text()) + Number(price));
+
+        $("#tPrice").text(Number($("#tPrice").text())+Number(price))
+        $(this).parents("li").find(".num_text").trigger("change")
+    })
+    $(".num_text").on("change input",function () {
+        var num = Number($(this).val());
+        var price = $(this).parents("li").find("input").eq(1).val();
+        var maxNum = $(this).parents("li").find(".gwc-p1 span").text()
+        if(num <= price){
+            $(this).parents("li").find(".num_1").attr({"disabled":"disabled"});
+        }else{
+            $(this).parents("li").find(".num_1").removeAttr("disabled");
+        }
+
+    })
+}
+$.extend({
+    /**
+     * 加载购物车数据
+     * @param code
+     * @param ciphertext
+     * @param userId
+     */
+    loadShop:function (code,ciphertext,userId) {
+        if(userId == null || userId == 0){
+           var storeArray = $.cookie("storeArray");
+
+            $.ajax({
+                "url": server.url+"/app/productperiod/list_shop.do",
+                "data": {
+                    "periodIds": storeArray,
+                    "code": code,
+                    "ciphertext": ciphertext
+                },
+                "type": "POST",
+                "dataType": "json",
+                "async": true,
+                "success": function (data) {
+                    dataHtml(data.result);
+                }
+            })
+        }else{
+            $.ajax({
+                "url": server.url+"/app/productperiod/list_shop.do",
+                "data": {
+                    "userId": userId,
+                    "code": code,
+                    "ciphertext": ciphertext
+                },
+                "type": "POST",
+                "dataType": "json",
+                "async": true,
+                "success": function (data) {
+                    dataHtml(data.result);
+                }
+            })
+        }
+    },
+
+})
+/**
+ * 提交
+ */
+$("#submit").on("click",function () {
+    var userId = $("#userId").val();
+    if(userId == null){
+        $.login();
+    }else{
+        checkNum();
+        submit_from("shop_form");
+    }
+
+
+})
+
+/**
+ * 根据数据生成购物车商品列表
+ * @param data
+ */
+function dataHtml(data){
+    var result = data;
+    var tNum = 0;
+    var tPrice = 0;
+    var html = '';
+    $.each(result,function (index,value) {
+        html += '<li><input id="" class="period" name="periodId" type="hidden" value="'+value.periodId+'" form="show_form"><input id="" type="hidden" value="'+value.minMun+'">';
+        html += '<div class="hwc-tu f-l"><a href="#"><img src="'+value.facePic+'"></a></div><div class="gwc-md f-l">';
+        html += '<h3><a href="#">'+value.storeName+'</a></h3> <p class="gwc-p1">募集价：<span>￥'+value.price+'</span></p>';
+        html += '<p class="gwc-p1">剩余：<span>'+value.sNum+'</span></p> ' +
+            ' <p class="gwc-p2 num_p"><input class="num_btn num_1" type="button" value="-" disabled>';
+        html += '<input class="num_text" name="buyNum" type="text" maxlength="9" value="'+value.minMun+'" form="show_form"><input class="num_btn num_2" type="button" value="+"> </p></div>';
+        html += '<a href="javascript:void(0)" class="gwc-del f-r delete_a" ><img src="images/sjsc-10.gif"></a><div style="clear:both;"></div></li>';
+
+        tNum += value.minMun;
+        tPrice += value.minMun;
+    })
+    $("#store_list").empty();
+    $("#store_list").html(html);
+    $(".num_text").attr("form","shop_form");
+    $(".period").attr("form","shop_form");
+    $("#tNum").text(tNum);
+    $("#tPrice").text(tPrice)
+    init();
+}
+/**
+ * 提交订单
+ * @param fromId
+ */
+function submit_from(fromId) {
+    var periodIds = new Array();
+    var nums = new Array();
+    $("#store_list li").each(function (index) {
+        periodIds.push($(this).find("input[class='period']").val());
+        nums.push($(this).find("input[class='num_text']").val())
+    })
+
+    $.ajax({
+        "url": server.url+"/app/buy/buy.do",
+        "data": {
+            "userId" : $("#userId").val(),
+            "userName" : $("#userName").val(),
+            "periodId" : periodIds.join(","),
+            "buyNum" : nums.join(","),
+            "code": $("#code").val(),
+            "ciphertext": $("#ciphertext").val()
+        },
+        "type": "POST",
+        "dataType": "json",
+        "async": true,
+        "success": function (data) {
+            if(data.status == 1){
+                location.href="pay.html?orderId="+data.result.getId;
+            }else{
+                console.log(data.message)
+            }
+        }
+    })
+}
+function checkNum(){
+    var periods = new Array();
+    var nums = new Array();
+    $("#store_list li").each(function (index) {
+        periods.push($(this).find("input[class='period']").val());
+        nums.push($(this).find("input[class='num_text']").val())
+    })
+    $.ajax({
+        "url": server.url+"/app/buy/checkNum.do",
+
+        "data": {
+            "periodIds" : periods.join(","),
+            "nums" : nums.join(","),
+            "code": $("#code").val(),
+            "ciphertext": $("#ciphertext").val()
+        },
+        "type": "POST",
+        "dataType": "json",
+        "async": true,
+
+        "success": function (data) {
+            if(data.status == 1){
+                var num = 0;
+                $.each(data.result, function(key, value) {
+                    var li = $("#store_list li").find("input[class='period'][value='"+key+"']").parent("li");
+                    li.find("input[class='num_text']").val(value)
+                    num += Number(value);
+                });
+                $("#tNum").text(num);
+                $("#tPrice").text(num);
+            }
+        },
+
+    })
+}

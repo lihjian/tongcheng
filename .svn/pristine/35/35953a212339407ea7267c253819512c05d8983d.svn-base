@@ -1,0 +1,107 @@
+/**
+ * Created by admin on 2016/12/19.
+ */
+$.extend({
+    time_warp:function (obj) {
+        var interval = setInterval(function(){
+                var NowTime = new Date();
+                var nMS= 300000 - (NowTime.getTime() - Number($(obj).attr("time")));
+                if(nMS <= 0){
+                    $(obj).html('<span>正在计算开奖结果...</span>')
+                    $.get(obj,interval);
+                    return ;
+                }
+                var nM=Math.floor(nMS/(1000*60)) % 60;
+                var nS=Math.floor(nMS/1000) % 60;
+                var nMS=Math.floor(nMS/100) % 10;
+                if(nM < 10){
+                    nM = "0"+nM
+                }
+                if(nS < 10){
+                    nS = "0"+nS
+                }
+                if(nMS < 10){
+                    nMS = "0"+nMS
+                }
+                var str = '揭晓倒计时 <span class="timer" >'+nM+':'+nS+':'+nMS+'';
+                $(obj).html(str);
+
+
+        }, 1);
+    },
+    loadInfoData:function (code,ciphertext) {
+        $.ajax({
+            "url": server.url + "/app/public/list.do",
+            "data": {
+                "code": code,
+                "ciphertext": ciphertext
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                if(data.status == 1){
+                    var html = '';
+                    $.each(data.result,function (index,value) {
+                        var time = new Date().getTime() - value.finishDate ;
+                        if(time > 300000){
+                            var text = value.winner;
+                            if(text != null && text.length > 25){
+                                text = text.substr(0,25)+"...";
+                            }
+                            html +='<li><div class="hwc-tu fm-pic f-l"><a href="#"><img src="'+value.facePic+'"></a></div>'
+                            html += '<div class="gwc-md f-l"><h3><a href="#">'+text+'</a></h3>';
+                            html += '<p class="gwc-p1 jx-p">本期人次：<span>'+value.buyNum+'</span></p><p class="gwc-p1">总需人次：<span>'+value.num+'</span></p>'
+                            html += '<p class="gwc-p2 jx-p">揭晓日期<span>'+new Date(value.winDate).format("yyyy-MM-dd")+'</span></p>';
+                            html += '</div><div style="clear:both;"></div></li>';
+                        }else{
+                            var text = value.storeName;
+                            if(text != null && text.length > 25){
+                                text = text.substr(0,25)+"...";
+                            }
+                            html +='<li><div class="hwc-tu fm-pic f-l"><a href="#"><img src="'+value.facePic+'"></a></div>'
+                            html += '<div class="gwc-md f-l"><h3><a href="#">'+text+'</a></h3>';
+                            html += '<p class="gwc-p1 jx-p spqh-p">商品期号：<span>'+value.period+'</span></p><p class="gwc-p1">总需人次：<span>'+value.num+'</span></p>'
+                            html += '<p class="gwc-p2 jx-p jxdj-p" time="'+value.finishDate+'" period="'+value.periodId+'" storeId="'+value.storeId+'">揭晓倒计时  <span>00:00:00</span></p>';
+                            html += '</div><div style="clear:both;"></div></li>';
+                        }
+                    })
+                    $(".list").html(html)
+                    $(".jxdj-p").each(function () {
+
+                        $.time_warp($(this));
+                    })
+                }
+            }
+        })
+    },
+    get:function (obj,interval) {
+        var periodId = $(obj).attr("period");
+        var storeId = $(obj).attr("storeId");
+        $.ajax({
+            "url": server.url + "/app/public/list.do",
+            "data": {
+                "code": channelLink.code,
+                "ciphertext": channelLink.ciphertext,
+                "storeId" : storeId,
+                "periodId" : periodId
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                if(data.status == 1){
+                    var text = data.result.winner;
+                    if(text != null && text.length > 25){
+                        text = text.substr(0,25)+"...";
+                    }
+                    $(obj).siblings(".spqh-p").html('商品期号：<span>'+data.result.buyNum+'</span>');
+                    $(obj).siblings("h3").html('<a href="#">'+text+'</a>');
+                    $(obj).html('揭晓日期<span>'+new Date(data.result.winDate).format("yyyy-MM-dd")+'</span>')
+                    $(obj).removeClass("jxdj-p");
+                    clearInterval(interval);
+                }
+            }
+        })
+    }
+})

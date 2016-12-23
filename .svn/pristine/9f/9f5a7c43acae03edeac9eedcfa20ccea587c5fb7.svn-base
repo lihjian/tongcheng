@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>夺宝首页</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<style>
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="hidden" value="" id="code">
+		<input type="hidden" value="" id="ciphertext">
+		<header style="z-index: 9;">
+			<div class="quanbu-top">
+				<a class="qb-tleft f-l" href="classify.html"><i class="fa fa-list"></i></a>
+				<span>夺宝</span>
+				<div class="qb-tright f-r">
+
+				</div>
+				<div style="clear:both;"></div>
+
+			</div>
+		</header>
+		<div class="conn">
+			<div class="banner1" id="ban1">
+				<div class="swiper-wrapper" id="imgDiv">
+
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+
+			<div class="sy-info1">
+				<ul class="sy-ul1">
+					<li>
+						<a href="JavaScript:void(0);">热门推荐</a>
+					</li>
+
+					<div style="clear:both;"></div>
+				</ul>
+				<div class="sy-qie" id="huadong">
+					<div class="swiper-wrapper" id="remenDiv">
+						<div class="swiper-slide">
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="ssjg" style="padding-bottom:0;">
+				<ul class="ssjg-tit1">
+					<li class="current">
+						<a href="JavaScript:;">人气</a>
+					</li>
+					<li class="">
+						<a href="JavaScript:;">进度</a>
+					</li>
+					<li class="">
+						<a href="JavaScript:;" class="desc">价格<img src="images/Asc.gif" style="display: none"></a>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+				<ul class="ssjg-ul1" style="padding-top: 1px;" id="stores">
+
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+
+			<div class="sy-ft">
+				<!--<div class="sy-ftif1">-->
+				<!--<table border="1" class="sy-tab1" bordercolor="#dbdbdb">-->
+				<!--<tr>-->
+				<!--<td align="center" valign="middle"><a href="#">首页</a></td>-->
+				<!--<td align="center" valign="middle"><a href="#">什么是我想要？</a></td>-->
+				<!--<td align="center" valign="middle"><a href="#">登录</a></td>-->
+				<!--<td align="center" valign="middle"><a href="#">注册</a></td>-->
+				<!--</tr>-->
+				<!--</table>-->
+				<!--</div>-->
+				<!--<div class="sy-ftif1">-->
+				<!--<p class="sy-ft-p1" id="phone"></p>-->
+				<!--<p class="sy-ft-p1" id="copyright"></p>-->
+				<!--<p class="sy-ft-p1" id="icp"></p>-->
+				<!--</div>-->
+			</div>
+
+			<!--返回顶部-->
+			<div class="sy-fanhui">
+				<a href="JavaScript:;"><img src="images/sjsc29.gif"></a>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/swiper-3.4.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#code").val(channelLink.code)
+			$("#ciphertext").val(channelLink.ciphertext)
+			$.loadPics(channelLink.code, channelLink.ciphertext)
+			$.loadHot(channelLink.code, channelLink.ciphertext);
+			$.loadData(channelLink.code, channelLink.ciphertext);
+			foot(0);
+
+
+		});
+	</script>
+
+</html>

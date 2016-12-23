@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城正在募集</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+
+</head>
+
+<body>
+
+    <div class="quanbu-top">
+        <div class="jxtb-div">
+            <span>最新揭晓</span>
+        </div>
+
+    </div>
+    <div class="conn">
+
+    <div class="ssjg">
+
+        <ul class="gwc-ul1 list">
+
+        </ul>
+    </div>
+    </div>
+	
+    
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" src="js/collecting.js"></script>
+<script type="text/javascript" src="js/foot.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        foot(1)
+        $.loadInfoData(channelLink.code,channelLink.ciphertext)
+
+    })
+
+</script>
+</html>

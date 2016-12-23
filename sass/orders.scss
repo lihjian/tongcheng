@@ -1,0 +1,140 @@
+@import url("shoujisc.css");
+@import url("style.css");
+*{
+	color: #666666;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+	width: 100%;
+	background: #F1F1F1;
+	border-bottom: 1px #DEDEDE solid;
+	height: 50px;
+    line-height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	.col-xs-1{
+		display: inline-block;
+		height: 50px;
+        line-height: 50px;
+		font-size: 22px;
+		color: #333333;
+	}
+}
+
+.z_container{
+	
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
+	bottom: 49px;
+	overflow: hidden;
+	.z_scroll{
+         width: 100%; display: -webkit-box; -moz-box-flex: flex;-moz-box-orient: vertical;-webkit-box-orient: vertical; position: absolute; z-index: 10;}
+	.order_list{
+		width: 94%;
+		margin: 5px auto;
+		overflow: hidden;
+		background: white;
+		border: 1px #DEDEDE solid;
+		ul{
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 8px;
+			
+			li{
+				height: 30px;
+				line-height: 30px;
+			}
+			.times,.order_code{
+				float: left;
+			}
+			.status,.handle{
+				float: right;
+			}
+			.status{
+			    color: #FF6D00;
+			}
+			.handle{
+			    border: 1px #999999 solid;
+			    border-radius: 5px;
+			    padding: 0 8px;
+			    height: 24px;
+			    line-height: 24px;
+			    margin: 3px 0;
+			    color: #333333;
+			}
+			
+		}
+		.o_line{
+		    margin: 0 8px;
+		    background: #DEDEDE;
+		    height: 1px;
+		    transform: scaleY(0.5);
+		}
+		.details{
+		    margin: 5px 8px;
+		    overflow: hidden;
+		    dt{
+		        height: 80px;
+		        width: 30%;
+		        border: 1px #F1F1F1 solid;
+		        float: left;
+		        text-align: center;
+		        overflow: hidden;
+		        img{
+		            width: 100%;
+		        }
+		    }
+		    dd{
+		        float: left; overflow: hidden;width: 70%;
+		        .title,.price,.setbacks,.wintime{
+		            height: 26px;
+		            line-height: 26px;
+		            text-indent: 16px;
+		            overflow: hidden;
+		        }
+		        .price span{
+		            color: #D12424;
+		        }
+		        .setbacks i{
+		            display: inline-block;
+		            height: 8px;
+		            width: 120px;
+		            background: #F1F1F1;
+		            border-radius: 5px;
+		            b{
+		                display: block;
+		                height: 8px;
+		                width: 50px;
+		                background: #FFAF00;
+		                border-radius: 5px; 
+		            }
+		            span{
+		                display: inline-block;
+		                margin: 0 0 0 10px;
+		            }
+		        }
+		        
+		    }
+		}
+		
+	}
+	
+}
+footer{
+    height: 49px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index:10;
+}

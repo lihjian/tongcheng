@@ -1,0 +1,35 @@
+/**
+ * Created by admin on 2016/12/12.
+ */
+var pay = {
+    pay:function(url,orderId,price,body){
+
+    },
+    /**
+     * 支付结果
+     * @param userId 用户ID
+     * @param userName 用户名
+     * @param code 渠道商编号
+     * @param ciphertext 渠道商密文
+     * @param orderId 订单号
+     * @param status 支付结果（0、支付失败；1、支付成功）
+     */
+    pay_result:function(userId,userName,code,ciphertext,orderId,status){
+        $.ajax({
+            "url": server.url+"/app/buy/pay.do",
+            "data": {
+                "userId": userId,
+                "code": code,
+                "ciphertext": ciphertext,
+                "orderId" : orderId,
+                "status" : status
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                console.log(data.result);
+            }
+        })
+    }
+}

@@ -1,0 +1,337 @@
+/**
+ * Created by admin on 2016/11/30.
+ */
+var DataList = new Array();
+jQuery.extend({
+
+    /**
+     * 加载首页热门数据
+     * @param code  渠道商编号
+     * @param ciphertext 渠道商密文
+     */
+    loadHot:function(code,ciphertext){
+        $.ajax({
+            "url": server.url+"/app/store/getByHot.do",
+            "data": {
+                "pageId": 0,
+                "code": code,
+                "ciphertext": ciphertext
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                var datas = data.result;
+                if (data.status == 1) {
+
+                    var html = "";
+
+                    $.each(datas, function (index, value) {
+                        var num = value.num == null?0:value.num;
+                        var sNum = value.sNum == null?0:value.sNum;
+
+                        var jd = (num - sNum)/num;
+                        if(sNum == 0){
+                            jd = 0;
+                        }else{
+                            jd = (jd * 100).toFixed(2);
+                        }
+                        var text = value.name;
+                        if(text.length > 10){
+                            text = text.substr(0,10)+"...";
+                        }
+
+                        html += '<div class="swiper-slide rmtj-div"><div style="width: 100%;height: 100%"><div class="ssjg-tu periodInfo" style="height: 65%;padding: 5px;" period="'+value.periodId+'">';
+                        html += '<a href="#"><img src="' + value.facePic + '"></a></div>';
+                        html += '<div class="info_div periodInfo" period="'+value.periodId+'"><p class="text_p">夺宝价<span>￥' + value.price + '</span></p><p class="text_p">进度<span>'+jd+'%</span></p>';
+                        html += '<div class="sy-cs"><div class="sy-hs" style="width: '+jd+'%"></div></div></div> </div></div>'
+
+                    })
+                    html += '<div style="clear:both;"></div>';
+                    $("#remenDiv").empty();
+                    $("#remenDiv").html(html);
+
+                    $(".periodInfo").on("click",function(){
+                        $.loadPeriod($(this).attr("period"),code,ciphertext);
+                    })
+                    var swiper1 = new Swiper('#huadong', {
+                        // pagination: '.swiper-pagination',
+                        slidesPerView: 2.5,
+                        // centeredSlides: true,
+                        paginationClickable: true,
+                        spaceBetween: 00
+                    });
+
+
+                }else{
+                    console.log(data.message)
+                }
+            },
+            "error": function (msg) {
+
+            }
+        })
+    },
+    /**
+     * 头部滚动图片
+     * @param code
+     * @param ciphertext
+     */
+    loadPics:function (code,ciphertext) {
+        $.ajax({
+            "url": server.url + "/app/store/getSilde.do",
+            "data": {
+                "pageId": 0,
+                "code": code,
+                "ciphertext": ciphertext
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                var datas = data.result;
+                if (data.status == 1) {
+
+                    var img = '';
+                    $.each(datas, function (index, value) {
+
+                        if(value.pics.length > 0){
+                            img += '<div class="swiper-slide" period="'+value.periodId+'"><img style="display: inline-block;height: 100%" src="' + value.pics[0].url + '" ></div>';
+                        }
+
+                    })
+                    $("#imgDiv").empty();
+                    $("#imgDiv").append(img);
+                    var swiper2 = new Swiper('#ban1', {
+                        autoplay: 3000,
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true,
+                        spaceBetween: 30,
+                    });
+                    $("#imgDiv .swiper-slide").on("click",function(){
+                        $.loadPeriod($(this).attr("period"),code,ciphertext);
+                    })
+                }else{
+                    console.log(data.message)
+                }
+
+            }
+        })
+    },
+    loadData:function(code,ciphertext){
+        $.ajax({
+            "url": server.url+"/app/productperiod/getAll.do",
+            "data": {
+                "pageId": 0,
+                "code": code,
+                "ciphertext": ciphertext
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                DataList = data.result;
+               $.quickSort_desc(DataList,0,DataList.length-1,"rq");
+               showStore(DataList)
+            }
+        })
+    },
+    loadPeriod:function(id,code,ciphertext){
+
+        window.location.href="storeInfo.html?id="+id;
+    },
+    quickSort:function(result,start,end,porpertyName) {
+        if (start >= end) {
+            return;
+        }
+
+        var stepi = start, stepj = end;
+        var flag = true;
+        var key = result[stepi];
+        while (stepi != stepj) {
+            if (flag) {
+                var temp1=0,temp2=0;
+               if(porpertyName == "rq"){
+                    temp1 = key.period;
+                    temp2 = result[stepj].period;
+                }else if(porpertyName == "jd"){
+                   temp1 = getJd(key);
+                   temp2 = getJd(result[stepj]);
+               }else{
+                   temp1 = key.price;
+                   temp2 = result[stepj].price;
+               }
+                if (temp1 > temp2) {
+                    var temp = result[stepi];
+                    result[stepi] = result[stepj];
+                    result[stepj] = temp;
+                    flag = false;
+                } else {
+                    stepj--;
+                }
+            } else {
+                var temp1=0,temp2=0;
+                if(porpertyName == "rq"){
+                    temp1 = key.period;
+                    temp2 = result[stepi].period
+                }else if(porpertyName == "jd"){
+                    temp1 = getJd(key);
+                    temp2 = getJd(result[stepi]);
+                }else{
+                    temp1 = key.price;
+                    temp2 = result[stepi].price;
+                }
+                if (temp1 < temp2) {
+                    var temp = result[stepi];
+                    result[stepi] = result[stepj];
+                    result[stepj] = temp;
+                    flag = true;
+                } else {
+                    stepi++;
+                }
+            }
+            $.quickSort(result, start, stepj - 1,porpertyName);
+            $.quickSort(result, stepi + 1, end,porpertyName);
+        }
+    },
+    quickSort_desc:function(result,start,end,porpertyName) {
+        if (start >= end) {
+            return;
+        }
+
+        var stepi = start, stepj = end;
+        var flag = true;
+        var key = result[stepi];
+        while (stepi != stepj) {
+            if (flag) {
+                var temp1=0,temp2=0;
+                if(porpertyName == "rq"){
+                    temp1 = key.period;
+                    temp2 = result[stepj].period;
+                }else if(porpertyName == "jd"){
+                    temp1 = getJd(key);
+                    temp2 = getJd(result[stepj]);
+                }else{
+                    temp1 = key.price;
+                    temp2 = result[stepj].price;
+                }
+                if (temp1 < temp2) {
+                    var temp = result[stepi];
+                    result[stepi] = result[stepj];
+                    result[stepj] = temp;
+                    flag = false;
+                } else {
+                    stepj--;
+                }
+            } else {
+                var temp1=0,temp2=0;
+                if(porpertyName == "rq"){
+                    temp1 = key.period;
+                    temp2 = result[stepi].period
+                }else if(porpertyName == "jd"){
+                    temp1 = getJd(key);
+                    temp2 = getJd(result[stepi]);
+                }else{
+                    temp1 = key.price;
+                    temp2 = result[stepi].price;
+                }
+                if (temp1 > temp2) {
+                    var temp = result[stepi];
+                    result[stepi] = result[stepj];
+                    result[stepj] = temp;
+                    flag = true;
+                } else {
+                    stepi++;
+                }
+            }
+            $.quickSort_desc(result, start, stepj - 1,porpertyName);
+            $.quickSort_desc(result, stepi + 1, end,porpertyName);
+        }
+    }
+})
+$(".ssjg-tit1 li").on("click",function(){
+    $(this).addClass("current").siblings().removeClass("current");
+    var arr = new Array();
+    if($(this).children("a").text() == "人气"){
+        $.quickSort_desc(DataList,0,DataList.length-1,"rq");
+        $(".ssjg-tit1 li").eq(2).children("a").children("img").hide();
+        $(".ssjg-tit1 li").eq(2).children("a").attr("class","desc");
+    }else if($(this).children("a").text() == "进度"){
+        $.quickSort_desc(DataList,0,DataList.length-1,"jd");
+        $(".ssjg-tit1 li").eq(2).children("a").children("img").hide();
+        $(".ssjg-tit1 li").eq(2).children("a").attr("class","desc");
+    }else if($(this).children("a").text() == "价格"){
+
+        if($(this).children("a").attr("class") == "desc"){
+            $.quickSort_desc(DataList,0,DataList.length-1,"jg");
+            $(this).children("a").children("img").attr("src","images/Desc.gif")
+            $(this).children("a").attr("class","asc")
+        }else{
+            $.quickSort(DataList,0,DataList.length-1,"jg");
+            $(this).children("a").children("img").attr("src","images/Asc.gif")
+            $(this).children("a").attr("class","desc")
+        }
+        $(this).children("a").children("img").show();
+    }
+    showStore(DataList)
+})
+function showStore(arr){
+
+        var html = "";
+        $.each(arr,function (index,value) {
+            var text = value.storeName;
+            if(text != null && text.length > 20){
+                text = text.substr(0,20)+"...";
+            }
+            var jd = getJd(value)
+            html += '<li><div class="ssjg-tu periodInfo" period="'+value.periodId+'"><a href="#"><img src="'+value.facePic+'"></a></div>';
+            html += '<h3><a href="#">'+text+'</a></h3>';
+            html += '<dl class="ssjg-dl1"><dt class="periodInfo" period="'+value.periodId+'">';
+            html += '<p class="ssjg-p1">夺宝价<span>￥'+value.price+'</span></p>';
+            html += '<p class="ssjg-p2">进度<span>'+jd+'%</span></p><div class="sy-cs"><div class="sy-hs" style="width: '+jd+'%"></div></div></dt>';
+            html += '<dd><a href="javascript:void(0)" class="shop" period="'+value.periodId+'"><img src="images/sjsc-09.gif"></a></dd>';
+            html += '<div style="clear:both;"></div></dl></li>'
+        })
+        $("#stores").empty();
+        $("#stores").html(html);
+        $(".periodInfo").on("click",function(){
+            $.loadPeriod($(this).attr("period"),$("#code").val(),$("#ciphertext").val());
+        })
+        $(".shop").on("click",function(e){
+			var e = e || window.event;
+			e.stopPropagation();
+            var img = $(this).parent().parent().siblings("div").find("img");
+            var flyElm = img.clone().css('opacity', 0.75);
+            $('body').append(flyElm);
+            flyElm.css({
+                'z-index': 9000,
+                'display': 'block',
+                'position': 'absolute',
+                'top': img.offset().top +'px',
+                'left': img.offset().left +'px',
+                'width': img.width() +'px',
+                'height': img.height() +'px'
+            });
+            flyElm.animate({
+                top: $('.gwc').offset().top - 10,
+                left: $('.gwc').offset().left + 5,
+                width: 10,
+                height: 17
+            }, 'slow',"swing",function() {
+                flyElm.remove();
+            });
+           $.shop_add($(this).attr("period"));
+        })
+
+}
+function getJd(value) {
+    var num = value.num == null?0:value.num;
+    var sNum = value.sNum == null?0:value.sNum;
+    var jd = (num - sNum)/num;
+    if(sNum == 0){
+        jd = 0;
+    }else{
+        jd = (jd * 100).toFixed(2);
+    }
+    return jd
+}

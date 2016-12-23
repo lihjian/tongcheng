@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+		<title></title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="plug/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="plug/alert/css/alert.css" />
+		<link rel="stylesheet" href="css/classify.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/loading.css" />
+
+	</head>
+
+	<body>
+		<header>
+			<div class="quanbu-top">
+				<a class="qb-tleft f-l"><i class="fa fa-list"></i><span>宝贝列表</span></a>
+
+				<div class="qb-tright f-r">
+
+				</div>
+				<div style="clear:both;"></div>
+				<script type="text/javascript">
+					$(".quanbu-top .f-l").on("touchstart", function() {
+						var times = new Date().getTime();
+						window.location.href = "classify.html?" + times;
+					})
+				</script>
+			</div>
+		</header>
+		<div class="main_body">
+			<div class="container_left col-xs-3">
+				<ul></ul>
+			</div>
+
+			<!--右边-->
+			<div class="container_right col-xs-9">
+				<div class="good_list">
+					<div class="good_list_top">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<i class="fa fa-arrow-up backtop"></i>
+
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js"></script>
+	<script type="text/javascript" src="plug/alert/js/alert.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="js/classify.js"></script>
+
+</html>

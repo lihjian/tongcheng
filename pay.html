@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>确认支付</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+
+</head>
+
+<body>
+<div class="quanbu-top">
+    <div class="sjsc-title2">
+        <h3 class="sjsc-t2l">确认支付</h3>
+        <a href="javascript:history.back();" class="sjsc-t2r"><img style="height: 18px;width: 18px;margin-top: 10px" src="images/nav_ic_back.png"></a>
+    </div>
+</div>
+
+
+    <div class="drdd-info3 orderlist">
+
+    </div>
+
+    <div class="drdd-info2">
+        <p class="p1 f-l">共<span>0</span>件商品</p>
+        <p class="p2 f-r">总计：<span>￥0.00</span></p>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <dl class="drdd-info5">
+    	<dt>
+        	<h3>支付方式</h3>
+        </dt>
+        <dd>
+        	<ul class="drdd-ul1">
+            	<li><div ><div class="pay-div"><img src="images/weixin.png"><label>微信支付</label></div><div><input type="radio" class="pay-input" name="zhifu" value="1"/></div></div></li>
+                <li><div ><div class="pay-div"><img src="images/zhifubao.png"><label>支付宝</label></div><div><input type="radio" class="pay-input" name="zhifu" value="2" /></div></div></li>
+            </ul>
+        </dd>
+    </dl>
+    <form action="" method="post" id="form"></form>
+    <button class="drdd-btn" id="pay-btn">确认支付</button>
+    
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" src="js/pay.js"></script>
+<script type="text/javascript">
+    var id = $.getUrlParam("orderId");
+    $.loadOrderInfo(channelLink.code,channelLink.ciphertext,id);
+</script>
+</html>

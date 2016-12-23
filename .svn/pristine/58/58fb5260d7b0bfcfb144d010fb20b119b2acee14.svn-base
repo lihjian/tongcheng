@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+    <style>
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="javascript:void(0)"><span id="break"><</span>商品详情</a></h3>
+        <a href="#" class="sjsc-t1r f-r"><img src="images/sjsc20.gif"></a>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="banner1" id="ban1">
+        <div class="swiper-wrapper" id="imgDiv">
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <input type="hidden" id="periodId">
+    <div class="spxq-info1">
+    	<ul class="spxq-ul1">
+        	<li>
+            	<h3><a href="#" id="storeName">Apple iPhone6s Plus 64G 颜色随机 <span>唯一的不同，就是处处不同</span></a></h3>
+                <div>
+                    <p class="spxq-p1" id="period">期数：<span>3488</span></p>
+                	<p class="spxq-p1" id="price">价格：<span>￥4880.00</span></p>
+
+                    <div style="clear:both;"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="spxq-if1" style="text-align: left" >
+            <p class="ssjg-p1" id="jd">进度<span></span></p>
+        </div>
+        <div class="spxq-if1" >
+            <div class="sy-cs" style="background:#F3F3F3;" id="t_jd">
+                <div class="sy-hs" style="position: inherit" id="jdt"></div>
+            </div>
+        </div>
+        <div>
+            <p class="spxq-p1 f-l" id="yg">已购人数：<span>3199</span></p>
+            <p class="spxq-p2 f-r" id="sy">剩余人数：<span>3488</span>件</p>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div class="spxq-info2">
+    	<ul class="spxq-ul2">
+        	<li class="current"><a href="JavaScript:;">图文详情</a></li>
+        	<li><a href="JavaScript:;">往期募集</a></li>
+        	<li><a href="JavaScript:;">晒单分享</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="spxq-box">
+        	<div class="spxq-k spxq-k1">
+
+            </div>
+            <div class="spxq-k spxq-k2" style="display:none;">
+            	<div class="k2-if">
+                	<p class="k2-top">募集成功时间：2015-11-22 15:05:12</p>
+                    <dl class="k2-ft">
+                    	<dt><a href="#"><img src="images/sjsc32.jpg" /></a></dt>
+                        <dd>
+                        	<p class="k2-p1">募集者：<span>我要中大奖</span></p>
+                        	<p class="k2-p2">用户ID：133233125（唯一不变的标识）</p>
+                            <ul class="k2-ul1">
+                            	<li><a href="#"><img src="images/sjsc33.jpg" /></a></li>
+                            	<li><a href="#"><img src="images/sjsc33.jpg" /></a></li>
+                            	<li><a href="#"><img src="images/sjsc33.jpg" /></a></li>
+                                <div style="clear:both;"></div>
+                            </ul>
+                        </dd>
+                        <div style="clear:both;"></div>
+                    </dl>
+                </div>
+
+            </div>
+            <div class="spxq-k spxq-k3" style="display:none;">
+                <div class="k3-if1">
+                	<div class="k3-b1">
+                    	<h3><a href="#">恭喜你募集到了Apple iPhone6s Plus 64G 金色手机一部</a></h3>
+                        <div class="k3b-time">
+                        	<p class="k3b-p1 f-l">我要中大奖</p>
+                        	<p class="k3b-p2 f-r">11.23  20:35</p>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <dl class="k3b-dl1">
+                        	<dt><a href="#"><img src="images/sjsc33.jpg" /></a></dt>
+                            <dd>
+                            	<div class="k3b-pb">
+                                	<p class="k3b-pp">Apple iPhone6s Plus 64G 颜色随机 唯一的不同，就是处处不同</p>
+                            		<p class="k3b-pp">不是每个人都有这么好的人缘的，这次iPhone6s 到手，要感谢我亲爱的朋友们。</p>
+                                </div>
+                                <div class="k3b-tiao">
+                                	<p><a href="JavaScript:;">2<span>∧</span></a></p>
+                                </div>
+                            </dd>
+                            <div style="clear:both;"></div>
+                        </dl>
+                    </div>
+                    <ul class="k3-b2">
+                    	<li>
+                        	<div class="k3b2-if1">
+                                <p class="k3b2-p1 f-l">我要中大奖</p>
+                                <p class="k3b2-p2 f-r">11.23  22:15</p>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <p class="k3b2-p3">我想要，给我来一部，上演帽子戏法 </p>
+                        </li>
+                    	<li>
+                        	<div class="k3b2-if1">
+                                <p class="k3b2-p1 f-l">我要中大奖</p>
+                                <p class="k3b2-p2 f-r">11.23  22:15</p>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <p class="k3b2-p3">我想要，给我来一部，上演帽子戏法 </p>
+                        </li>
+                    </ul>
+                    <button class="k3-b3">我要评论</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spxq-info3">
+    	<!--<button class="if3-btnn if3-btn1 f-l" id="shop">我想要</button>-->
+    	<!--<button class="if3-btnn if3-btn2 f-l" id="shop_add">加入购物车</button>-->
+        <input class="if3-btnn if3-btn1 f-l" value="第1000001期正在进行。。。">
+        <a href="sprong_trolley.html" class="if3-aa f-l"><span class="gwc_num"></span><img src="images/sjsc-17-2.png" /></a>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/foot.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" src="js/storeInfo.js"></script>
+<script type="text/javascript" src="js/swiper-3.4.0.min.js"></script>
+
+<script type="text/javascript">
+   var id = $.getUrlParam("id");
+   $.loadStoreInfo(id,channelLink.code,channelLink.ciphertext);
+
+</script>
+</html>

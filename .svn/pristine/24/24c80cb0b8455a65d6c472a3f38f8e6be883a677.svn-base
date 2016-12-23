@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>晒单分享</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/ordershare.css" />
+	</head>
+
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">晒单分享</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="z_scroll">
+				<div class="share_list" ng-repeat="key in dataarr">
+					
+					<div class="nav">
+						<a><i class="fa fa-user"></i><span ng-bind="key.userName"></span></a>
+						<span class="time" ng-bind="key.createDate"></span>
+					</div>
+					<ul> 
+						<li class="pic col-xs-4"><img ng-src="{{key.pics[0].url}}" err-src="1.png"/></li>
+						<li class="z_text col-xs-7">
+							<p ng-bind="key.title"></p>
+							<p ng-bind="key.description"></p>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>  
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js" ></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="js/ordershare.js" ></script>
+
+</html>

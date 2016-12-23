@@ -1,0 +1,88 @@
+/**
+ * Created by admin on 2016/12/1.
+ */
+jQuery.extend({
+    loadStoreInfo:function (id,code,ciphertext) {
+
+         $.ajax({
+         "url": server.url+"/app/period/info.do",
+         "data": {
+         "id":id,
+         "code": code,
+         "ciphertext": ciphertext
+         },
+         "type": "POST",
+         "dataType": "json",
+         "async": true,
+         "success": function (data) {
+             var result = data.result;
+             var num = result.num == null ? 0 : result.num;
+             var sNum = result.sNum == null ? 0 : result.sNum;
+             var jd = (num - sNum) / num;
+             if (sNum == 0) {
+                 jd = 0;
+             } else {
+                 jd = (jd * 100).toFixed(2);
+             }
+             $("#periodId").val(result.periodId);
+             $("#storeName").empty();
+             $("#storeName").text(result.name);
+             $("#period span").text(result.period);
+
+             $("#price span").empty();
+             $("#price span").text(result.price);
+
+             $("#jd span").empty();
+             $("#jd span").text(jd + "%");
+             $("#yg span").empty();
+             $("#yg span").text((num - sNum));
+             $("#sy span").empty();
+             $("#sy span").text(sNum);
+             $("#jdt").width($("#t_jd").width() * (jd / 100));
+             $(".spxq-k1").html(result.description);
+
+             var pics = result.pics;
+             var html_ul = "";
+
+             $.each(pics, function (index, value) {
+                 html_ul += '<div class="swiper-slide"> <img width="100%" height="100%" src="' + value.url + '" ></div>';
+             })
+             $("#imgDiv").empty();
+             $("#imgDiv").html(html_ul)
+             var swiper = new Swiper('#ban1', {
+                 autoplay: 3000,
+                 pagination: '.swiper-pagination',
+                 paginationClickable: true,
+                 spaceBetween: 30,
+             });
+
+        }
+    })
+    },
+
+})
+$(document).ready(function(){
+    var temp = $.cookie("storeArray");
+    if(temp != null && temp != ""){
+        var num = temp.split(",").length
+        if(num > 0){
+            $(".gwc_num").text(num);
+            $(".gwc_num").show();
+        }else{
+            $(".gwc_num").hide();
+        }
+    }else{
+        $(".gwc_num").hide();
+    }
+
+})
+$("#shop_add").on("click",function () {
+    $.shop_add($("#periodId").val())
+})
+$("#shop").on("click",function(){
+    $.shop_add($("#periodId").val())
+    location.href="sprong_trolley.html";
+})
+$("#break").on("click",function () {
+    location.href="index.html";
+})

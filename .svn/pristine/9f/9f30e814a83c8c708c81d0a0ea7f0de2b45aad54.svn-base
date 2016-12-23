@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>用户中心</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/user.css" />
+	</head>
+	<body>
+		<header>
+    		<h3 class="sjsc-t2l">个人中心</h3>	
+		</header>
+		<div class="z_container">
+			<ul>
+				<li><i class="fa fa-file-text-o col-xs-1"></i><a href="orders.html" class="col-xs-9">我的订单</a><i class="fa fa-angle-right col-xs-2"></i></li>
+				<div class="o_line"></div>
+				<li><i class="fa fa-share-alt col-xs-1"></i><a href="addshare.html" class="col-xs-9">晒单分享</a><i class="fa fa-angle-right col-xs-2"></i></li>
+				<div class="o_line"></div>
+				<li><i class="fa fa-gift col-xs-1"></i><a href="winnerslist.html" class="col-xs-9">中奖列表</a><i class="fa fa-angle-right col-xs-2"></i></li>
+				<div class="o_line"></div>
+				<li><i class="fa fa-map-marker col-xs-1" style="text-indent: 19px;"></i><a href="address.html" class="col-xs-9">收货地址</a><i class="fa fa-angle-right col-xs-2"></i></li>
+				<div class="o_line"></div>
+			</ul>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script> 
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript">
+		foot(3);
+	</script>
+</html>

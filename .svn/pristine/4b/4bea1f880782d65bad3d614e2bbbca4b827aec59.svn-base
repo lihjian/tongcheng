@@ -1,0 +1,31 @@
+.loading {
+	width: 100%;
+	position: fixed;
+	top: 46px;
+	bottom: 49px;
+	overflow: hidden;
+	z-index: 1500;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.loading i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	height: 35px;
+	width: 35px;
+	font-size: 35px;
+	color: #666666;
+	animation: move 1.5s infinite linear;
+}
+
+@keyframes move {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城修改密码</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body style="background:#fff;">
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>修改密码</a></h3>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <ul class="xgmm-ul1">
+    	<li>
+        	<p>旧密码</p>
+            <input type="text" placeholder="输入旧密码" />
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p>新密码</p>
+            <input type="text" placeholder="输入新密码" />
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p>确认新密码</p>
+            <input type="text" placeholder="确认新密码" />
+            <div style="clear:both;"></div>
+        </li>
+    </ul>
+    
+    <button class="xgmm-btn1">确认修改</button>
+    
+    
+</body>
+</html>

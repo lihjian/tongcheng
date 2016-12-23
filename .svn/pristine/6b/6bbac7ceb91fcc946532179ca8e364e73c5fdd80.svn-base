@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城收货地址</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>收货地址</a></h3>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <dl class="drdd-info7">
+    	<dt>
+        	<p>
+            	<span class="f-l">张某人</span>
+            	<span class="f-r">15625580000</span>
+                <div style="clear:both;"></div>
+            </p>
+        	<p>
+            	<a href="JavaScript:;" class="a1">[默认]</a>浙江省杭州市某某区某某路00号<span class="sp1">4011200</span>
+            </p>
+        </dt>
+        <dd><a href="#">></a></dd>
+        <div style="clear:both;"></div>
+    </dl>
+    <dl class="drdd-info7">
+    	<dt>
+        	<p>
+            	<span class="f-l">张某人</span>
+            	<span class="f-r">15625580000</span>
+                <div style="clear:both;"></div>
+            </p>
+        	<p>
+            	浙江省杭州市某某区某某路00号<span class="sp1">4011200</span>
+            </p>
+        </dt>
+        <dd><a href="#">></a></dd>
+        <div style="clear:both;"></div>
+    </dl>
+    <dl class="drdd-info7">
+    	<dt>
+        	<p>
+            	<span class="f-l">张某人</span>
+            	<span class="f-r">15625580000</span>
+                <div style="clear:both;"></div>
+            </p>
+        	<p>
+            	浙江省杭州市某某区某某路00号<span class="sp1">4011200</span>
+            </p>
+        </dt>
+        <dd><a href="#">></a></dd>
+        <div style="clear:both;"></div>
+    </dl>
+    
+    <button class="drdd-btn">新增收货地址</button>
+    
+</body>
+</html>

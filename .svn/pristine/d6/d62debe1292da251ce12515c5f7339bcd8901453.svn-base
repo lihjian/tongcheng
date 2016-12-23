@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>晒单分享</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="css/winnerslist.css" />
+	</head>
+
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">中奖列表</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="z_scroll">
+				<div class="spxq-k spxq-k2" ng-repeat="key in dataarr">
+					<div class="k2-if">
+						<p class="k2-top">中奖时间：<span ng-bind="key.createDate"></span></p>
+						<dl class="k2-ft">
+							
+							<dd>
+								<p class="k2-p1">中奖者：<span ng-bind="key.username"></span></p>
+								<p class="k2-p2">奖品：<span ng-bind="key.storename"></span></p>
+								<ul class="k2-ul1">
+									<li>
+										<a href="#"><img ng-src="{{key.facePic}}" /></a>
+									</li>
+									<li>
+										<a href="#"><img ng-src="{{key.facePic}}" /></a>
+									</li>
+									<li>
+										<a href="#"><img ng-src="{{key.facePic}}" /></a>
+									</li>
+									<div style="clear:both;"></div>
+								</ul>
+							</dd>
+							<div style="clear:both;"></div>
+						</dl>
+						<div><a href="addshare.html" class="goshare">去晒单</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js" ></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			foot(3);
+		})
+		var app = angular.module( "myapp",[] );
+		app.controller( "myctrl",function( $scope,$http ){
+			var pageid = 1;
+			var alldata = [];
+			function loadwinner(){
+				$http({
+					dataType: "json",
+					method: "post",
+					url: channelLink.baseUrl + "/actor/selfOrderList.do",
+					async: true,
+					params: {
+						code: channelLink.code,
+						ciphertext: channelLink.ciphertext,
+						pageId:pageid,
+						userId: channelLink.userId,
+						winUserId:channelLink.userId
+					}
+				}).success( function(datas) {
+					var arr = datas.result;
+					console.log(datas)
+					if( arr.length == 0 && pageid ==1){
+						$(".spxq-k").html("");
+					}else{
+						$.each(arr, function(index,content) {
+							alldata.push( content );
+							$scope.dataarr = alldata;
+						});
+						console.log(alldata)
+					}
+				});
+			};
+			loadwinner();
+			
+			var myScroll = new IScroll('.z_container', {
+				bounceTime: 1200,
+				scrollbars: false,
+				click: true
+			});
+			myScroll.on('scrollEnd', function() {
+				if(myScroll.y == myScroll.maxScrollY) {
+					pageid++;
+					loadwinner();
+					console.log(pageid);
+				}
+			});
+			$(document).on("touchstart", function() {
+				myScroll.refresh();
+			})
+		} );
+	</script>
+	</body>
+
+</html>

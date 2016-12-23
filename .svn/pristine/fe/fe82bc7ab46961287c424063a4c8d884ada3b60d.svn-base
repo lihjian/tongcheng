@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>晒单分享</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="css/winnerslist.css" />
+	</head>
+
+	<body >
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">中奖列表</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="z_scroll">
+				<div class="spxq-k spxq-k2">
+					<div class="k2-if">
+						<p class="k2-top">募集成功时间：2015-11-22 15:05:12</p>
+						<dl class="k2-ft">
+							<dt><a href="#"><img src="images/sjsc32.jpg" /></a></dt>
+							<dd>
+								<p class="k2-p1">募集者：<span>我要中大奖</span></p>
+								<p class="k2-p2">用户ID：133233125（唯一不变的标识）</p>
+								<ul class="k2-ul1">
+									<li>
+										<a href="#"><img src="images/sjsc33.jpg" /></a>
+									</li>
+									<li>
+										<a href="#"><img src="images/sjsc33.jpg" /></a>
+									</li>
+									<li>
+										<a href="#"><img src="images/sjsc33.jpg" /></a>
+									</li>
+									<div style="clear:both;"></div>
+								</ul>
+							</dd>
+							<div style="clear:both;"></div>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js" ></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			foot(3);
+			var myScroll = new IScroll('.z_container', {
+				bounceTime: 1200,
+				scrollbars: false,
+				click: true
+			});
+			$(document).on("touchstart", function() {
+				myScroll.refresh();
+			})
+			$.ajax({
+				dataType: "json",
+				method: "post",
+				url: channelLink.baseUrl + "/winListPublic/listByUser.do",
+				async: true,
+				params: {
+					code: channelLink.code,
+					ciphertext: channelLink.ciphertext,
+					userId: 0,
+					pageId:0
+				},
+				success:function(datas) {
+					console.log(datas);
+				}
+			})
+
+		})
+//		var app = angular.module( "myapp",[] );
+//		app.controller( "myctrl",function( $scope,$http ){
+//			$http({
+//				dataType: "json",
+//				type: "post",
+//				url: channelLink.baseUrl + "/winListPublic/listByUser.do",
+//				async: true,
+//				params: {
+//					code: channelLink.code,
+//					ciphertext: channelLink.ciphertext,
+//					userId: 0,
+//					pageId:0
+//				}
+//			}).success( function(datas) {
+//				console.log(datas);
+//			});
+//		} );
+	</script>
+	</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>收货地址</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/address.css" />
+		<link rel="stylesheet" href="css/revise.css" />
+		<link rel="stylesheet" href="plug/alert/css/alert.css" />
+	</head>
+
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">收货地址</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="z_scroll">
+				<div class="address_list" ng-repeat="address in dataarr" id="{{address.id}}">
+					<div class="o_line"></div>
+					<div class="user">
+						<p class="name" ng-bind="address.name"></p>
+						<p class="phone" ng-bind="address.phone"></p>
+					</div>
+					<div class="address_details">
+						<p class="home_address">
+							<span ng-if="address.showDefault" style="color: #CC3333;">[默认]</span>
+							<span ng-bind="address.address"></span>
+
+						</p>
+						<p class="revise" ng-click="revise(address)">修改</p>
+					</div>
+					<div class="o_line"></div>
+				</div>
+				<div class="add_address" ng-click="newadd()">新增收货地址</div>
+			</div>
+		</div>
+		<div class="z_revise"></div>
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js"></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="plug/alert/js/alert.js" ></script>
+	<script type="text/javascript" src="js/newaddress.js" ></script>
+	<script type="text/javascript" src="js/address.js" ></script>
+
+</html>

@@ -1,0 +1,95 @@
+//底部加载
+$(function() {
+	foot(3);
+});
+//定义应用
+var app = angular.module("myapp", []);
+//添加控制器
+app.controller("myctrl", function($scope, $http) {
+	//定义数组，存储加载来的数据
+	var alldata = [];
+	//请求购买记录的页面，初始值为第一页；
+	var pageid = 1;
+	//加载购买记录数据的方法
+	function loadrecord(pageid) {
+		$http({
+			dataType: "json",
+			method: "post",
+			url: channelLink.baseUrl + "/actor/selfOrderList.do",
+			async: true,
+			params: {
+				code: channelLink.code,
+				ciphertext: channelLink.ciphertext,
+				userId: channelLink.userId,
+				pageId: pageid
+			}
+		}).success(function(datas) {
+			//取到购买记录的第一页，如果第一页都没有数据，则没有购买记录
+			var arr = datas.result;
+			if(arr.length == 0 && pageid == 1) {
+				$(".order_list").html("");
+			} else {
+				//如果有，遍历数据，算出进度，判断是否开奖了，是否有中奖者
+				$.each(arr, function(idx, content) {
+					//商品的被购买的数量
+					var buynum = content.blance;
+					//商品总数量
+					var allnum = content.totalnum;
+					//进度公式
+					var percent = ((allnum - buynum) / allnum) * 100 + "%";
+					//进度条的宽度计算公式
+					var percentwidth = ((allnum - buynum) / allnum) * 120 + "px";
+					//定义开奖状态，已开奖或者等待开奖，进度为100%则为已开奖 ，否则为等待开奖
+					var status;
+					if(percent == "100%") {
+						//说明已经开奖，给对象加一个full属性，用来判断是否隐藏进度条
+						content.full = "full";
+						status = "已开奖";
+						//已开奖则找出中奖者
+						content.username = "中奖者：" + content.username;
+					} else {
+						//说明没开奖 给对象加一个setback属性，用来判断是否隐藏揭晓时间
+						content.setback = "unfull";
+						//等待开奖，火热进行中
+						status = "等待开奖";
+						content.username = "火热进行中";
+					};
+					content.status = status;
+					//进度百分比
+					content.percent = percent;
+					//进度条样式
+					content.percentwidthstyle = {
+						"width": percentwidth 
+					};
+					
+					//处理后的数据放入数组
+					alldata.push(content);
+				});
+				//将数据数组赋给scope对象的属性
+				$scope.dataarr = alldata;
+				//console.log(alldata)
+			};
+		});
+	};
+	//默认加载第一页
+	loadrecord(pageid);
+	//滚动条
+	var myScroll = new IScroll('.z_container', {
+		bounceTime: 1200,
+		scrollbars: false,
+		click: true
+	});
+	//每次滚动结束，判断是否滚动到页面底部，如果滚动到底部，加载下一页
+	myScroll.on('scrollEnd', function() {
+		if(myScroll.y == myScroll.maxScrollY) {
+			pageid++;
+			loadrecord(pageid);
+			//console.log(pageid);
+		}
+	});
+	//屏幕每次触碰，刷新滚动条高度
+	$(document).on("touchstart", function() {
+		myScroll.refresh();
+	})
+
+});

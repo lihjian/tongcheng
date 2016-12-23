@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>收货地址</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/address.css" />
+		<link rel="stylesheet" href="css/revise.css" />
+		<link rel="stylesheet" href="plug/alert/css/alert.css" />
+	</head>
+
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">收货地址</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="z_scroll">
+				<div class="address_list" ng-repeat="address in dataarr" id="{{address.id}}">
+					<div class="o_line"></div>
+					<div class="user">
+						<p class="name" ng-bind="address.name"></p>
+						<p class="phone" ng-bind="address.phone"></p>
+					</div>
+					<div class="address_details">
+						<p class="home_address">
+							<span ng-if="address.showDefault" style="color: #CC3333;">[默认]</span>
+							<span ng-bind="address.address"></span>
+
+						</p>
+						<p class="revise" ng-click="revise(address)">修改</p>
+					</div>
+					<div class="o_line"></div>
+				</div>
+				<div class="add_address" ng-click="newadd()">新增收货地址</div>
+			</div>
+		</div>
+		<div class="z_revise"></div>
+		
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js"></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="plug/alert/js/alert.js" ></script>
+	<script type="text/javascript">
+		//定义应用
+		var app = angular.module("myapp", []);
+		//添加控制器
+		app.controller("myctrl", ["$scope", "$http", "$compile",function($scope, $http,$compile) {
+			//对象
+			function Address() {};
+			//尾部加载
+			Address.prototype.footer = function() {
+					foot(3);
+				}
+				//收货地址加载
+			Address.prototype.addresslist = function() {
+				function loadaddresslist() {
+					//请求收货地址列表					
+					$http({
+						method: "post",
+						dataType: "json",
+						url: channelLink.baseUrl+"/takeaddr/list.do",
+						async: true,
+						params: {
+							code: channelLink.code,
+							ciphertext: channelLink.ciphertext,
+							userId: channelLink.userId
+						}
+					}).success(function(datas) {
+						console.log(datas)
+						var arr = datas.result;
+						if(arr.length == 0) {
+							$(".address_list").html("");
+						} else {
+							$.each(arr, function(key, item) {
+								if(item.isDefalut == "1") {
+									var temp = item;
+									arr[key] = arr[0];
+									arr[0] = temp;
+									arr[0].showDefault = 1;
+									return false;
+								};
+							});
+						};
+						$scope.dataarr = arr;
+						
+					});
+				};
+				loadaddresslist();
+			};
+			//修改
+			Address.prototype.reviseaddress = function() {
+				//点击修改按钮，弹出修改页面
+				$scope.revise = function(address) {
+					//讲要修改的地址信息传过来
+					$scope.oldaddress = address;
+					//加载修改页面
+					$http.get("revise.html?_" + Math.random()).success( function( datas ){
+						console.log("A");
+						$compile( $(".z_revise").html(datas) )($scope);
+					} );
+					
+					
+				};
+				
+				//关闭修改页面
+				$scope.close = function(){
+					$(".mask").remove();
+					$(".revise_details").remove();
+				}
+				//保存修改按钮
+				$scope.saverevise = function( $event, oldaddress){
+					var save = $event.target;
+					var defaultAddress = 0;
+					//是否设为默认
+					var default_address = $(save).siblings().find("input[type='checkbox']").is(':checked');
+					if(default_address == true) {
+						defaultAddress = 1;
+					} else {
+						defaultAddress = 0;
+					}
+					//需要修改的地址的id
+					var addressid = oldaddress.id;
+					//旧地址信息
+					var oldname = oldaddress.name;
+					var oldphone = oldaddress.phone;
+					var oldaddressdetails = oldaddress.address;
+					//新地址信息
+					var newname = $(save).siblings().find(".name").val();
+					var newphone = $(save).siblings().find(".phone").val();
+					var newaddressdetails = $(save).siblings().find(".addressdetail").val();
+					//
+					if( oldname == newname && oldphone == newphone && oldaddressdetails == newaddressdetails && defaultAddress == 0){
+						$(".mask").remove();
+						$(".revise_details").remove();
+					}else if( newname.length == 0 || newname.length == 0 || newaddressdetails.length == 0){
+						$(".mask").remove();
+						$(".revise_details").remove();
+					}else{
+						$.ajax({
+							type: "post",
+							dataType: "json",
+							url: channelLink.baseUrl+"/takeaddr/save.do",
+							async: true,
+							data: {
+								id:addressid,
+								code: channelLink.code,
+								ciphertext: channelLink.ciphertext,
+								userId: channelLink.userId,
+								name: newname,
+								phone: newphone,
+								address: newaddressdetails,
+								isDefalut: defaultAddress
+							},
+							success: function(datas) {
+								$(".mask").remove();
+								$(".revise_details").remove();
+								if(datas.errorCode == "00000") {
+									$.alert({
+										title: "温馨提示",
+										content: "修改地址成功",
+										btn: "确定"
+									});
+									setTimeout( function(){
+										window.location.reload()
+									} ,1500)
+								} else {
+									$.alert({
+										title: "温馨提示",
+										content: "修改地址失败",
+										btn: "确定"
+									});
+								};
+								//window.location.reload();
+							}
+						});
+					}
+				}
+			}
+			//新增
+			Address.prototype.addadress = function() {
+				$scope.newadd = function() {
+					window.location.href = "newaddress.html?=" + Math.random();
+				}
+			};
+			//实例
+			var address = new Address();
+			//尾部加载
+			address.footer();
+			//加载收货地址
+			address.addresslist();
+			//修改
+			address.reviseaddress(); 
+			//新增收货地址跳转
+			address.addadress();
+		}]);
+		//滚动条
+		$(function() {
+			var myScroll = new IScroll('.z_container', {
+				bounceTime: 1200,
+				scrollbars: false,
+				click: true
+			});
+			$(document).on("touchstart", function() {
+				myScroll.refresh();
+			})
+		})
+	</script>
+
+</html>

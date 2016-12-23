@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+    <style>
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<input type="hidden" id="storeId" name="storeId"/>
+<div class="quanbu-top">
+    <div class="sjsc-title2">
+        <h3 class="sjsc-t2l" >计算详情</h3>
+        <a href="javascript:history.back();" class="sjsc-t2r"><img style="height: 18px;width: 18px;margin-top: 10px" src="images/nav_ic_back.png"></a>
+
+    </div>
+</div>
+
+    <input type="hidden" id="periodId">
+<div class="jsxq-body">
+    <div class="jsxq-tile">
+        <p>截止商品最后购买时间<span id="lastTime">2016-12-20 10:28:59</span></p>
+        <p>最后<span class="buyNum">100</span>条全站都买时间记录</p>
+
+    </div>
+    <div class="jsxq-tdiv">
+        <table class="jsxq-table">
+            <thead>
+                <td>购买时间</td>
+                <td>转换数据</td>
+                <td>用户名</td>
+            </thead>
+            <tbody id="jsxq-tbody"></tbody>
+        </table>
+    </div>
+    <div class="jssm-div">
+        <ul>
+            <li>取以上数值结果:</li>
+            <li>1、求和：<span id="total"></span><span class="sm-span" >(上面所有记录时间取值相加)</span></li>
+            <li>2、取余：<span id="yushu"></span></li>
+            <li>3、计算结果：<span id="result"></span></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" src="js/storeInfo.js"></script>
+<script type="text/javascript" src="js/swiper-3.4.0.min.js"></script>
+<script type="text/javascript" src="js/calculate.js"></script>
+<script type="text/javascript">
+   var id = $.getUrlParam("id");
+    $("#periodId").val(id);
+    $.loadJSXQ($("#periodId").val(),channelLink.code,channelLink.ciphertext)
+</script>
+</html>

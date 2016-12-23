@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>晒单分享</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="css/addshare.css" />
+		<link rel="stylesheet" href="plug/alert/css/alert.css" />
+	</head>
+
+	<body>
+		<header>
+			<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">添加分享</span><i class="col-xs-1"></i>
+		</header>
+		<div class="z_container">
+			<div class="fbsd-info1">
+				<input type="text" placeholder="点击添加主题" />
+			</div>
+			<div class="fbsd-info4">
+				<textarea placeholder="点击添加描述"></textarea>
+			</div>
+			<div class="fbsd-info2">
+				<ul class="fbsd-ul1">
+					<li class="fbsd-lilast">
+						<img src="images/sjsc36.jpg" />
+						<input type="file" class="img1" />
+					</li>
+					<li class="showpic">
+						<div class="picbtn"><img id="ImgPr" /></div>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+
+			<div class="share">
+				<a href="#">分享</a>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="plug/alert/js/alert.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			foot(3);
+			//预览
+			var dataURL = "";
+			$(".img1").change(function(e) {
+				var $file = $(this);
+				var fileObj = $file[0];
+				console.log(fileObj.files[0])
+				var windowURL = window.URL || window.webkitURL;
+
+				var $img = $("#ImgPr");
+				if(fileObj && fileObj.files && fileObj.files[0]) {
+					dataURL = windowURL.createObjectURL(fileObj.files[0]);
+					$img.attr('src', dataURL);
+					console.log(dataURL)
+				} else {
+					dataURL = $file.val();
+					var imgObj = document.getElementById("ImgPr");
+					imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+					imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+				};
+
+			});
+			//点击分享按钮
+			$(".share").on("touchstart", function() {
+				var s_title = $("input").eq(0).val();
+				var s_details = $("textarea").val();
+				console.log(s_details);
+				if(s_details.length != 0 && s_details.length != 0 && s_details != "" && s_details != "") {
+					$.ajax({
+						dataType: "json",
+						type: "post",
+						url: channelLink.baseUrl + "/show/save.do",
+						async: true,
+						data: {
+							code: channelLink.code,
+							ciphertext: channelLink.ciphertext,
+							userId: 0,
+							urls: dataURL,
+							userName: "小明",
+							title: s_title,
+							description: s_details
+						},
+						success: function(datas) {
+							window.location.href = "ordershare.html?="+Math.random();
+						}
+
+					});
+				};
+
+			});
+
+			
+			
+		})
+	</script>
+
+</html>

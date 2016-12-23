@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城确认订单1</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>确认订单</a></h3>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <dl class="drdd-info6">
+    	<dt>
+        	<p>
+            	<span class="f-l">收货人：张三</span>
+            	<span class="f-r">联系电话：13800223344</span>
+                <div style="clear:both;"></div>
+            </p>
+        	<p>收货地址：浙江省杭州市萧山区金城路669号</p>
+        </dt>
+        <dd><a href="#">></a></dd>
+        <div style="clear:both;"></div>
+    </dl>
+    
+    <div class="drdd-info2">
+    	<p class="p1 f-l">共2件商品</p>
+    	<p class="p2 f-r">总计：<span>￥2888.00</span></p>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <div class="drdd-info3">
+    	<div class="drdd-if3tu f-l">
+        	<a href="#"><img src="images/sjsc-07.gif"></a>
+        </div>
+        <h3 class="drdd-h31 f-l"><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+        <p class="drdd-p1 f-r">￥2888.00</p>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <div class="drdd-info4">
+    	<p>配送方式</p>
+        <a href="#">快递 包邮<span>></span></a>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <dl class="drdd-info5">
+    	<dt>
+        	<h3>支付方式<span>(请支付初始募集资金，金额不限，也可不支付费用直接发起募集)</span></h3>
+        </dt>
+        <dd>
+        	<ul class="drdd-ul1">
+            	<li><label><input type="radio" name="zhifu" />微信支付</label></li>
+            	<li><label><input type="radio" name="zhifu" />支付宝</label></li>
+            </ul>
+        </dd>
+    </dl>
+    
+    <button class="drdd-btn">发起募集</button>
+    
+</body>
+</html>

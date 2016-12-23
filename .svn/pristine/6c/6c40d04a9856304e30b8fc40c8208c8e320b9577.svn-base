@@ -1,0 +1,17 @@
+/**
+ * Created by admin on 2016/11/30.
+ */
+var channelLink = {
+    userId:SessionStorageUtil.getUserId(),
+    userName:'test',
+    name:"算命大师",
+    code:"smds",
+    ciphertext:"xxcdddc",
+    createDate:"2016-11-25 09:26:20",
+    baseUrl:"http://120.76.219.201:8088/app"
+}
+var company = {
+    phone : "400-666-8888",
+    copyright : "2013-2015 我想要网站所有",
+    ICP : "130001001  xxx科技有限公司"
+}

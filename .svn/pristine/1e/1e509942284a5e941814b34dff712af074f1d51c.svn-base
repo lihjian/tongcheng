@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>夺宝购物车</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+
+</head>
+
+<body>
+    <input type="hidden" value="" id="code" name="code">
+    <input type="hidden" value="" id="ciphertext" name="ciphertext">
+    <input type="hidden" value="" id="userId" name="userId">
+    <input type="hidden" value="" id="userName" name="userName">
+    <div class="quanbu-top">
+        <div class="sjsc-title2" style="background-color: transparent;border: none;">
+            <h3 class="sjsc-t2l" >购物车</h3>
+            <a href="javascript:history.back();" class="sjsc-t2r"><</a>
+        </div>
+    </div>
+
+    <form id="shop_form" method="post">
+        <ul class="gwc-ul1" id="store_list" style="margin-top: 50px">
+
+
+        </ul>
+    </form>
+    <div class="gwc-ft">
+        <p >共募集<label id="tNum">12</label>件商品，总计：<span >￥<label id="tPrice">12440.00</label></span></p>
+        <button id="submit">提交</button>
+        <div style="clear:both;"></div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+<script type="text/javascript" src="js/shopping.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" >
+    $(document).ready(function(){
+        $("#code").val(channelLink.code)
+        $("#ciphertext").val(channelLink.ciphertext)
+        $("#userId").val(channelLink.userId)
+        $("#userName").val(channelLink.userName)
+        $.loadShop(channelLink.code,channelLink.ciphertext,0);
+        init();
+    })
+</script>
+</html>

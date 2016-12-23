@@ -1,0 +1,31 @@
+<div class="mask" ng-click="close()"></div>
+<div class="revise_details">
+	
+	<div class="add_address">
+		<div class="z_title">修改收货地址</div>
+		<div class="addressinfo">
+			<p class="col-xs-3 ">收货人</p>
+			<input type="text" name="" id="" value="{{oldaddress.name}}"  class="col-xs-9 name" placeholder="姓名" />
+		</div>
+		<div class="o_line"></div>
+		<div class="addressinfo">
+			<p class="col-xs-3 ">手机号</p>
+			<input type="text" name="" id="" value="{{oldaddress.phone}}"  class="col-xs-9 phone" placeholder="11位手机号"/>
+		</div>
+		<div class="o_line"></div>
+		<div class="addressinfo">
+			<p class="col-xs-3 addressdetails">详细地址</p>
+			<input type="text" name="" id="" value="{{oldaddress.address}}"  class="col-xs-9 addressdetail" placeholder="省市区街道信息"/>
+		</div>
+		<div class="o_line"></div>
+		<div class="addressinfo">
+			<p class="col-xs-5 ">设为默认地址</p>
+			<input type="checkbox" name="" id="" value=""  class="default"/>
+		</div>
+		<div class="o_line"></div>
+		<div class="save" ng-click="saverevise($event,oldaddress)">保存修改</div>
+	</div>
+</div>
+
+
+

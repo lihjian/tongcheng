@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>购买记录</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/orders.css" />
+		
+	</head>
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+    		<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">购买记录</span><i class="col-xs-1"></i>
+		</header>
+
+		<div class="z_container">
+			<div class="z_scroll">
+			<div class="order_list" ng-repeat="key in dataarr">
+				
+					<ul>
+						<li class="times" ng-bind="key.createDate"></li>
+						<li class="status" ng-bind="key.status"></li>
+					</ul>
+				
+				<div class="o_line"></div>
+				<div class="details">
+					<dl>
+						<dt><img ng-src="{{key.facePic}}"/></dt>
+						<dd>
+							<p class="title" ng-bind="key.username"></p>
+							<p class="price" ng-bind="key.storename"></p>
+							<p class="setbacks" ng-hide="key.full">进度：<i><b ng-style="key.percentwidthstyle"></b></i><span ng-bind="key.percent"></span></p>
+							<p class="wintime" ng-hide="key.setback">揭晓时间：<span ng-bind="key.createDate"></span></p>
+						</dd>
+					</dl>
+				</div>
+				<div class="o_line"></div>
+				
+					<ul>
+						<li class="order_code">第<span ng-bind="key.period"></span>期</li>
+						
+					</ul>
+				
+			</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js" ></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js" ></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js" ></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			foot(3);
+			
+			
+		});
+		
+		var app = angular.module( "myapp",[] );
+		app.controller( "myctrl",function( $scope,$http ){
+			//定义数组，存储加载来的数据
+			var alldata = [];
+			//请求购买记录的页面，初始值为第一页；
+			var pageid = 1;
+			//加载购买记录数据的方法
+			function loadrecord( pageid ){
+				$http({
+					dataType: "json",
+					method:"post",
+					url: channelLink.baseUrl + "/actor/selfOrderList.do",
+					async: true,
+					params: {
+						code: channelLink.code,
+						ciphertext: channelLink.ciphertext,
+						userId: channelLink.userId,
+						pageId:pageid
+					}
+				}).success( function(datas) {
+					//取到购买记录的第一页，如果第一页都没有数据，则没有购买记录
+					var arr = datas.result;
+					if( arr.length == 0 && pageid ==1 ){
+						$(".order_list").html("");
+					}else{	
+						//如果有，遍历数据，算出进度，判断是否开奖了，是否有中奖者
+						$.each(arr, function(idx,content) {
+							//商品的被购买的数量
+							var buynum = content.blance;
+							//商品总数量
+							var allnum = content.totalnum;
+							//进度公式
+							var percent = ((allnum-buynum)/allnum)*100+"%";
+							//进度条的宽度计算公式
+							var percentwidth = ((allnum-buynum)/allnum)*120+"px";
+							//定义开奖状态，已开奖或者等待开奖，进度为100%则为已开奖 ，否则为等待开奖
+							var status;
+							if( percent == "100%" ){
+								status = "已开奖";
+								//已开奖则找出中奖者
+								content.username = "中奖者："+content.username;
+							}else{
+								//等待开奖，火热进行中
+								status = "等待开奖";
+								content.username = "火热进行中";
+							};
+							content.status = status;
+							//进度百分比
+							content.percent = percent;
+							//进度条样式
+							content.percentwidthstyle = {
+								"width":percentwidth
+							};
+							//判断是否有中奖者，如果有中奖者，说明已经开奖，显示开奖时间，如果没有中奖者，则显示进度条
+							if( content.username){
+								content.full = "full";
+							}else{
+								content.setback = "unfull";
+							}
+							//处理后的数据放入数组
+							alldata.push(content);
+						});
+						//将数据数组赋给scope对象的属性
+						$scope.dataarr = alldata;
+						console.log( alldata )
+					};
+				});
+			};
+			//默认加载第一页
+			loadrecord( pageid );
+			var myScroll = new IScroll('.z_container', {
+				bounceTime: 1200,
+				scrollbars: false,
+				click: true
+			});
+			myScroll.on('scrollEnd', function() {
+				if(myScroll.y == myScroll.maxScrollY) {
+					pageid++;
+					loadrecord();
+					console.log(pageid);
+				}
+			});
+			$(document).on("touchstart", function() {
+				myScroll.refresh();
+			})
+			
+		} );
+		
+
+	</script>
+</html>

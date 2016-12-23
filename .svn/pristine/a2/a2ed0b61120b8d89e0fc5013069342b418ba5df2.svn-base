@@ -1,0 +1,59 @@
+* {
+  color: #333333; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  width: 100%;
+  background: #F1F1F1;
+  border-bottom: 1px #DEDEDE solid;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center; }
+  header .col-xs-1 {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #333333; }
+
+.z_container {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  overflow: hidden; }
+  .z_container .spxq-k {
+    margin: 5px auto;
+    width: 94%;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px #DEDEDE;
+    display: block;
+    position: relative; }
+    .z_container .spxq-k .goshare, .z_container .spxq-k .goshare a {
+      height: 20px;
+      line-height: 17px;
+      background: #CC3333;
+      padding: 2px 5px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border-radius: 3px;
+      color: white; }
+
+footer {
+  height: 49px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10; }
+
+/*# sourceMappingURL=winnerslist.css.map */

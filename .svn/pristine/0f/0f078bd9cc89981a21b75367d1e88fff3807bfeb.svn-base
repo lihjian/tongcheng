@@ -1,0 +1,92 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  width: 100%;
+  background: #F1F1F1;
+  border-bottom: 1px #DEDEDE solid;
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center; }
+  header .col-xs-1 {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font-size: 22px;
+    color: #333333; }
+
+.z_container {
+  width: 100%;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  overflow: hidden; }
+  .z_container .fbsd-info1 {
+    width: 94%;
+    margin: 5px auto; }
+    .z_container .fbsd-info1 input {
+      width: 100%;
+      padding: 0px 13px;
+      height: 30px;
+      border: 0; }
+  .z_container .fbsd-info4 {
+    padding: 5px 0 5px 10px;
+    background: #fff;
+    margin: 5px auto;
+    width: 94%; }
+    .z_container .fbsd-info4 textarea {
+      width: 100%;
+      border: 0;
+      resize: none; }
+  .z_container .fbsd-info2 {
+    padding: 10px 2%;
+    background: #fff;
+    margin-top: 5px;
+    width: 94%;
+    margin: 0 auto; }
+    .z_container .fbsd-info2 .fbsd-ul1 li {
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin: 0; }
+  .z_container .fbsd-ul1 .showpic {
+    margin-left: 5px;
+    border: none; }
+  .z_container .share {
+    /* width: 100%; */
+    height: 30px;
+    background: #D12323;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    margin-top: 36px;
+    margin: 36px auto;
+    border-radius: 6px; }
+    .z_container .share a {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      display: block; }
+      .z_container .share a img {
+        display: inline-block;
+        margin-left: 5px;
+        width: 15px; }
+
+footer {
+  height: 49px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10; }
+
+/*# sourceMappingURL=addshare.css.map */

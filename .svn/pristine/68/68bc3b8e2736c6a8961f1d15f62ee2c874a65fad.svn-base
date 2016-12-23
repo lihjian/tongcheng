@@ -1,0 +1,49 @@
+header{
+	width: 100%;
+	height: 46px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: white;
+}
+.quanbu-top{
+	color: white;
+}
+.quanbu-top ul {
+	position: absolute;
+	top: 32px;
+	background: rgba(235,235,235,0.9);
+	border: 1px #dedede solid ;
+	overflow: hidden;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.quanbu-top ul li {
+	width: 88px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: rgb(245,245,245);
+	margin: 5px 0;
+}
+.quanbu-top .f-l{
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #333333;
+}
+.quanbu-top .f-l span{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+    font-size: 18px;
+    padding-left: 8px;
+    color: white;
+}
+.quanbu-top .f-l i{
+  font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+}

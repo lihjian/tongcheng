@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城缺货登记</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>缺货登记</a></h3>
+        <div style="clear:both;"></div>
+    </div>
+    <ul class="qhdj-ul1">
+    	<li><input type="text" placeholder="商品名称" /></li>
+    	<li><input type="text" placeholder="商品型号" /></li>
+    	<li><textarea placeholder="商品描述"></textarea></li>
+    </ul>
+	
+    <div class="qhdj-tijiao">
+    	<a href="#">提交</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,402 @@
+/**
+ * Created by admin on 2016/12/1.
+ */
+jQuery.extend({
+    loadStoreInfo:function (id,code,ciphertext) {
+
+         $.ajax({
+         "url": server.url+"/app/period/info.do",
+         "data": {
+         "id":id,
+         "code": code,
+         "ciphertext": ciphertext
+         },
+         "type": "POST",
+         "dataType": "json",
+         "async": true,
+         "success": function (data) {
+             var result = data.result;
+             if(result == null){
+                 return ;
+             }
+             var num = result.num == null ? 0 : result.num;
+             var sNum = result.sNum == null ? 0 : result.sNum;
+             var jd = (num - sNum) / num;
+             if (sNum == 0) {
+                 jd = 0;
+             } else {
+                 jd = (jd * 100).toFixed(2);
+             }
+             $("#storeId").val(result.storeId)
+             $("#periodId").val(result.periodId);
+             $("#storeName").empty();
+             $("#storeName").text(result.name);
+             $("#period span").text(result.period);
+             if(result.isFinish == 0){
+                 $("#price span").text(result.price);
+                 $("#jd span").text(jd + "%");
+                 // $("#yg span").text((num - sNum));
+                 // $("#sy span").text(sNum);
+                 $("#jdt").width($("#t_jd").width() * (jd / 100));
+                 $("#rs-div").html('<p class="spxq-p1 f-l" id="yg">已购人数：<span>'+(num - sNum)+'</span></p>'+
+                     '<p class="spxq-p2 f-r" id="sy">剩余人数：<span>'+sNum+'</span>件</p>'+
+                     '<div style="clear:both;"></div>')
+                 var btnHtml = '<button class="if3-btnn if3-btn1 f-l" id="shop">我想要</button> <button class="if3-btnn if3-btn2 f-l" id="shop_add">加入购物车</button> ' +
+                     '<a href="sprong_trolley.html" class="if3-aa f-l"><span class="gwc_num"></span><img src="images/sjsc-17-2.png" /></a>';
+                 $(".spxq-info3").html(btnHtml);
+                 $("#shop_add").on("click",function () {
+                     $.shop_add($("#periodId").val())
+                 })
+                 $("#shop").on("click",function(){
+                     $.shop_add($("#periodId").val())
+                     location.href="sprong_trolley.html";
+                 })
+             }else{
+                 var time = new Date().getTime() - result.finishDate;
+                 if(time > 300000) {
+                     var numArray = result.buyNum;
+                     $("#price").html('获奖者：<span>' + result.winner + '</span>')
+                     $("#jd").html('揭晓日期：<span>' + new Date(result.winDate).format("yyyy-MM-dd hh:mm:ss") + '</span>');
+                     $("#jdt").width(0);
+                     $("#rs-div").html()
+                     var html = '<div style="height: 35px;background-color: #D12323;color: white;line-height: 35px;' +
+                         'text-align: center;font-size: 16px" id="xyhm">幸运号码 ' + result.winNum + '</div><div>获得者本期共参与' + numArray.length + '次</div><div id="num-div" class="hid-div">';
+                     html += "<ul>"
+                     for (var int = 0; int < numArray.length; int++) {
+                         html += '<li style="width: 25%;height: 20px;float:left">' + numArray[int] + '</li>';
+                     }
+                     html += '<div style="clear:both;"></div></ul></div><div style="text-align: center;height: 30px;line-height: 30px;border-top: 1px solid"><span class="seeall">查看全部</span></div>';
+                     $("#rs-div").html(html);
+
+                     $(".seeall").on("click", function () {
+                         if ($(this).text() == "查看全部") {
+                             $("#num-div").removeClass("hid-div");
+                             $(this).text("收起全部")
+                         } else {
+                             $("#num-div").addClass("hid-div");
+                             $(this).text("查看全部")
+                         }
+
+                     })
+                     $("#xyhm").on("click",function () {
+                         location.href="calculate.html?id="+$("#periodId").val();
+                     })
+                 }else{
+                     $("#price span").text(result.price);
+                     $("#jd span").text("100%");
+                     $("#jdt").width(0);
+                     $("#rs-div").html('<div style="height: 35px;background-color: #D12323;color: white;line-height: 35px;' +
+                         'text-align: center;font-size: 16px">正在进行开奖计算...</div>')
+                 }
+                 var btnHtml = '<input type="button" class="if3-btnn if3-btn1 f-l" style="width: 76%;text-align: center" value="新的期次正在进行。。。"> ' +
+                     '<a href="sprong_trolley.html" class="if3-aa f-l"><span class="gwc_num"></span><img src="images/sjsc-17-2.png" /></a>';
+                 $(".spxq-info3").html(btnHtml);
+
+                 $(".if3-btnn").on("click",function () {
+                     $.ajax({
+                         "url": server.url + "/app/period/newInfo.do",
+                         "data": {
+                             "storeId": $("#storeId").val(),
+                             "code": code,
+                             "ciphertext": ciphertext
+
+                         },
+                         "type": "POST",
+                         "dataType": "json",
+                         "async": true,
+                         "success": function (data) {
+                            if(data.status == 1){
+                                window.location.href="storeInfo.html?id="+data.result;
+                            }
+                         }
+                     })
+
+
+                 })
+             }
+
+             $(".spxq-k1").html(result.description);
+
+             var pics = result.pics;
+             var html_ul = "";
+
+             $.each(pics, function (index, value) {
+                 html_ul += '<div class="swiper-slide"> <img width="100%" height="100%" src="' + value.url + '" ></div>';
+             })
+             $("#imgDiv").empty();
+             $("#imgDiv").html(html_ul)
+             var swiper = new Swiper('#ban1', {
+                 autoplay: 3000,
+                 pagination: '.swiper-pagination',
+                 paginationClickable: true,
+                 spaceBetween: 30,
+             });
+
+        }
+    })
+    },
+    loadWQJX:function (code,ciphertext,storeId,pageId) {
+        $.ajax({
+            "url":server.url+"/app/winListPublic/listByStore.do",
+            "data": {
+                "storeId": storeId,
+                "code": code,
+                "ciphertext": ciphertext,
+                "pageId" : pageId
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                if(data.status == 1){
+                    if(data.result == null || data.result.length == 0){
+                        return false;
+                    }
+                    var html = ''
+                    $.each(data.result,function (index,value) {
+                        html += '<li class="wxjx-li" period="'+value.pPeriodId+'"><div>期号：<span>'+value.period+'</span></div><div class="hwc-tu fm-pic f-l" style="width: 80px;height: 80px"><a href="#"><img src="images/tx.png"></a></div><div class="gwc-md f-l"><h3><a href="#">获奖者：<span>'+value.userName+'</span></a></h3>'
+                        html += '<p class="gwc-p1 jx-p">本期参与：<span>'+value.buyNum+'</span></p><p class="gwc-p1">总需人次：<span>'+value.num+'</span></p>';
+                        html += '<p class="gwc-p2 jx-p">揭晓日期：<span>'+new Date(value.createDate).format("yyyy-MM-dd hh:mm:ss")+'</span></p></div><div style="clear:both;"></div></li>';
+                    })
+                    $("#wqjx").html(html);
+                    $("li[class='wxjx-li']").on("click",function () {
+                        window.location.href="storeInfo.html?id="+$(this).attr("period");
+                    })
+
+                }
+            }
+        })
+        return true;
+    },
+    loadSYCY:function (code,ciphertext,periodId,pageId) {
+        $.ajax({
+            "url": server.url + "/app/actor/recordList.do",
+            "data": {
+                "preiodId": periodId,
+                "code": code,
+                "ciphertext": ciphertext,
+                "pageId": pageId
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                if(data.status == 1){
+                    if(data.result == null || data.result.length == 0){
+                        return ;
+                    }
+                    var html = ''
+                    $.each(data.result,function (index,value) {
+                        html += '<li></div><div class="hwc-tu fm-pic f-l" style="width: 80px;height: 80px"><a href="#"><img src="images/tx.png"></a></div><div class="gwc-md f-l"><h3><a href="#">参与者：<span>'+value.userName+'</span></a></h3>'
+                        html += '<p class="gwc-p1 jx-p">本期参与：<span>'+value.buynum+'</span></p>';
+                        html += '<p class="gwc-p2 jx-p">参与日期：<span>'+value.createDate+'</span></p></div><div style="clear:both;"></div></li>';
+                    })
+                    $("#sycy").html(html);
+                }
+            }
+        })
+
+    },
+    /**
+     * 晒单分享
+     */
+    show:function (code,ciphertext,storeId,pageId) {
+        $.ajax({
+            "url": server.url + "/app/show/listByStore.do",
+            "data": {
+                "storeId": storeId,
+                "code": code,
+                "ciphertext": ciphertext,
+                "pageId": pageId
+            },
+            "type": "POST",
+            "dataType": "json",
+            "async": true,
+            "success": function (data) {
+                if(data.status == 1){
+                    if(data.result == null || data.result.length == 0){
+                        return false;
+                    }
+                    var html = ''
+                    $.each(data.result,function (index,value) {
+                        html += '<div class="shaidan-info"> <p class="sdlb-p1"> <a href="#">分享者：<span>'+value.userName+'</span></a>';
+                        html += '<span>时间：'+new Date(value.createDate).format("yyyy-MM-dd")+'</span> </p><div style="clear:both;"></div> <p></p>';
+                        html += '<dl class="sdlb-dl1"><dt><a href="#"><img src="'+value.pics[0].url+'"></a></dt>';
+                        html += '<dd><p>'+value.title+'</p><p>'+value.description+'</p></dd>';
+                        html += '<div style="clear:both;"></div> </dl> </div>';
+                    })
+                    $("#sdfx").html(html);
+                }
+            }
+        })
+    },
+    /**
+     *
+     * 滚动加载
+     * @param index
+     * @param code
+     * @param ciphertext
+     * @param id
+     * @param pageId
+     */
+    socrllLoad:function (index,code,ciphertext,id,pageId) {
+
+        var loading = false;
+        $(window).scroll(function(){
+            if((($(window).scrollTop()+$(window).height())+50)>=$(document).height()){
+                if(loading == false){
+                    loading = true;
+                    if(index == 1){
+                        $.ajax({
+                            "url":server.url+"/app/winListPublic/listByStore.do",
+                            "data": {
+                                "storeId": id,
+                                "code": code,
+                                "ciphertext": ciphertext,
+                                "pageId" : pageId
+                            },
+                            "type": "POST",
+                            "dataType": "json",
+                            "async": true,
+                            "success": function (data) {
+                                if(data.status == 1){
+
+                                    if(data.result == null || data.result.length < 10){
+                                        return ;
+                                    }
+                                    var html = ''
+                                    $.each(data.result,function (index,value) {
+                                        html += '<li class="wxjx-li" period="'+value.pPeriodId+'"><div>期号：<span>'+value.period+'</span></div><div class="hwc-tu fm-pic f-l" style="width: 80px;height: 80px"><a href="#"><img src="images/tx.png"></a></div><div class="gwc-md f-l"><h3><a href="#">获奖者：<span>'+value.userName+'</span></a></h3>'
+                                        html += '<p class="gwc-p1 jx-p">本期参与：<span>'+value.buyNum+'</span></p><p class="gwc-p1">总需人次：<span>'+value.num+'</span></p>';
+                                        html += '<p class="gwc-p2 jx-p">揭晓日期：<span>'+new Date(value.createDate).format("yyyy-MM-dd hh:mm:ss")+'</span></p></div><div style="clear:both;"></div></li>';
+                                    })
+                                    $("#wqjx").append(html);
+                                    $("li[class='wxjx-li']").on("click",function () {
+                                        window.location.href="storeInfo.html?id="+$(this).attr("period");
+                                    })
+                                    pageId++;
+                                    loading = false;
+                                }else if(index == 2){
+                                    $.ajax({
+                                        "url": server.url + "/app/actor/recordList.do",
+                                        "data": {
+                                            "preiodId": id,
+                                            "code": code,
+                                            "ciphertext": ciphertext,
+                                            "pageId": pageId
+                                        },
+                                        "type": "POST",
+                                        "dataType": "json",
+                                        "async": true,
+                                        "success": function (data) {
+                                            if(data.status == 1){
+                                                if(data.result == null || data.result.length < 10){
+                                                    return false;
+                                                }
+                                                var html = ''
+                                                $.each(data.result,function (index,value) {
+                                                    html += '<li></div><div class="hwc-tu fm-pic f-l" style="width: 80px;height: 80px"><a href="#"><img src="images/tx.png"></a></div><div class="gwc-md f-l"><h3><a href="#">参与者：<span>'+value.userName+'</span></a></h3>'
+                                                    html += '<p class="gwc-p1 jx-p">本期参与：<span>'+value.buynum+'</span></p>';
+                                                    html += '<p class="gwc-p2 jx-p">参与日期：<span>'+value.createDate+'</span></p></div><div style="clear:both;"></div></li>';
+                                                })
+                                                $("#sycy").append(html);
+                                                pageId++;
+                                                loading = false;
+                                            }
+                                        }
+                                    })
+                                }else if(index == 3){
+                                    $.ajax({
+                                        "url": server.lcoalurl + "/app/show/listByStore.do",
+                                        "data": {
+                                            "storeId": id,
+                                            "code": code,
+                                            "ciphertext": ciphertext,
+                                            "pageId": pageId
+                                        },
+                                        "type": "POST",
+                                        "dataType": "json",
+                                        "async": true,
+                                        "success": function (data) {
+                                            if(data.status == 1){
+                                                if(data.result == null || data.result.length == 0){
+                                                    return false;
+                                                }
+                                                var html = ''
+                                                $.each(data.result,function (index,value) {
+                                                    html += '<div class="shaidan-info"> <p class="sdlb-p1"> <a href="#">分享者：<span>'+value.userName+'</span></a>';
+                                                    html += '<span>时间：'+new Date(value.createDate).format("yyyy-MM-dd")+'</span> </p><div style="clear:both;"></div> <p></p>';
+                                                    html += '<dl class="sdlb-dl1"><dt><a href="#"><img src="'+value.pics[0]+'"></a></dt>';
+                                                    html += '<dd><p>'+value.title+'</p><p>'+value.description+'</p></dd>';
+                                                    html += '<div style="clear:both;"></div> </dl> </div>';
+                                                })
+                                                $("#sdfx").append(html);
+                                                pageId++;
+                                                loading = false;
+                                            }
+                                        }
+                                    })
+                                }
+                            }
+                        })
+
+                    }
+                }
+            }
+        });
+    }
+})
+$(document).ready(function(){
+    var temp = $.cookie("storeArray");
+    if(temp != null && temp != ""){
+        var num = temp.split(",").length
+        if(num > 0){
+            $(".gwc_num").text(num);
+            $(".gwc_num").show();
+        }else{
+            $(".gwc_num").hide();
+        }
+    }else{
+        $(".gwc_num").hide();
+    }
+
+})
+$("#shop_add").on("click",function () {
+    $.shop_add($("#periodId").val())
+})
+$("#shop").on("click",function(){
+    $.shop_add($("#periodId").val())
+    location.href="sprong_trolley.html";
+})
+$("#break").on("click",function () {
+    location.href="index.html";
+})
+$(".spxq-ul2 li").click(function(event) {
+    var index2 = $(this).index();
+
+    if(index2 == 1){
+        if($(this).attr("class") != "current") {
+            var pageId = 1;
+            $.loadWQJX(channelLink.code, channelLink.ciphertext, $("#storeId").val(), pageId);
+            pageId++;
+            $.socrllLoad(1,channelLink.code, channelLink.ciphertext,$("#storeId").val(),pageId)
+        }
+    }else if(index2 == 2){
+        if($(this).attr("class") != "current"){
+            var pageId = 1;
+            $.loadSYCY(channelLink.code,channelLink.ciphertext,$("#periodId").val(),pageId);
+            pageId++;
+            $.socrllLoad(2,channelLink.code, channelLink.ciphertext,$("#periodId").val(),pageId)
+        }
+
+    }else if(index2 == 3){
+        if($(this).attr("class") != "current"){
+            var pageId = 1;
+            $.show(channelLink.code,channelLink.ciphertext,$("#storeId").val(),pageId);
+            pageId++;
+            $.socrllLoad(3,channelLink.code, channelLink.ciphertext,$("#storeId").val(),pageId)
+        }
+    }
+    $(this).addClass('current').siblings().removeClass('current');
+    $(".spxq-box .spxq-k").eq(index2).show().siblings().hide();
+});

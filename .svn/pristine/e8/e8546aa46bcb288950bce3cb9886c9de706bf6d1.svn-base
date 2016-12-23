@@ -1,0 +1,80 @@
+@import url("shoujisc.css");
+@import url("style.css");
+* {
+  color: #666666; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  width: 100%;
+  background: #F1F1F1;
+  border-bottom: 1px #DEDEDE solid;
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center; }
+  header .col-xs-1 {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font-size: 22px;
+    color: #333333; }
+
+.z_container {
+  width: 100%;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  overflow: hidden; }
+  .z_container .add_address {
+    width: 94%;
+    margin: 5px auto;
+    overflow: hidden;
+    background: white;
+    border: 1px #DEDEDE solid;
+    padding: 5px 8px; }
+    .z_container .add_address .addressinfo {
+      height: 24px;
+      line-height: 24px; }
+      .z_container .add_address .addressinfo p {
+        padding: 0; }
+      .z_container .add_address .addressinfo input {
+        padding: 0;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px; }
+    .z_container .add_address .name, .z_container .add_address .phone, .z_container .add_address .addressdetail, .z_container .add_address .postcodes {
+      border: none; }
+    .z_container .add_address .province, .z_container .add_address .city, .z_container .add_address .district {
+      margin-right: 0; }
+    .z_container .add_address .o_line {
+      height: 1px;
+      width: 100%;
+      background: #DEDEDE; }
+
+.save_address {
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  color: white;
+  margin: 26px auto 0 auto;
+  text-align: center;
+  background: #D12323;
+  border-radius: 6px; }
+
+footer {
+  height: 49px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10; }
+
+/*# sourceMappingURL=newaddress.css.map */

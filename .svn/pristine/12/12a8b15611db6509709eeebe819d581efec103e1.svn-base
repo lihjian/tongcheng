@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+		<title></title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="plug/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+		<link rel="stylesheet" href="css/classify.css" />
+		<link rel="stylesheet" href="css/header.css" />
+
+	</head>
+
+	<body>
+		<header></header>
+
+		<div class="main_body">
+			<div class="container_left col-xs-3">
+				<ul>
+					<li>推荐分类</li>
+				</ul>
+			</div>
+			
+			<!--右边-->
+			<div class="container_right col-xs-9">
+				<div class="good_list">
+					
+					<div class="good_list_top"><h6>热门品牌</h6></div>
+					<div class="good_list_bottom"><h6>推荐品牌</h6></div>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("header").load("header.html?_" + Math.random());
+			foot(0);
+			$.ajax({
+				type:"post",
+				url:"http://120.76.219.201:8088/app/store/getSortList.do",
+				async:true,
+				data:{
+					code:'smds',
+					ciphertext:'xxcdddc'
+				},
+				success:function(datas){
+//					$.each( datas.result,function(index,content){
+//						//$("<li>" + content.name +"</li>").appendTo("container_left ul");
+//					} )
+					var obj = datas
+					console.log(datas.status)
+				}
+			});
+
+		});
+		window.onload = function() {
+			$(".quanbu-ul1 li").removeClass("current");
+
+		}
+	</script>
+
+</html>

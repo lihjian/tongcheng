@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城募集信息</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="js/foot.js"></script>
+</head>
+
+<body>
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>商品募集</a></h3>
+        <a href="#" class="sjsc-t1r f-r">分享</a>
+        <div style="clear:both;"></div>
+    </div>
+    
+    
+    <div class="banner11" id="ban11">
+        <ul class="sy-ul1">
+            <li><a href="javascript:;"><img src="images/sjsc26.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/sjsc26.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/sjsc26.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/sjsc26.jpg"></a></li>
+            <li><a href="javascript:;"><img src="images/sjsc26.jpg"></a></li>
+        </ul>
+        <ol class="sy-ol1">
+        </ol>
+    </div>
+    
+    
+    <div class="muji-info1">
+    	<div class="muji-bg">
+        	<div class="muji-cs"></div>
+        </div>
+        <div class="muji-if1">
+        	<p class="f-l">已完成：<span>65%</span></p>
+        	<p class="f-r">还差：<span>35%</span></p>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <div class="muji-info2">
+    	<p class="mj-p1">来自小伙伴的募集订单</p>
+        <div class="mj-if2">
+        	<div class="mj-tu1 f-l"><a href="#"><img src="images/sjsc-11-1.jpg"></a></div>
+            <div class="mj-wz f-l">
+            	<h3 class="mj-h31"><a href="#">The new Macbook</a></h3>
+                <p class="mj-p2">目前有888人付款</p>
+                <p class="mj-p2">募集结束时间倒计时2天</p>
+                <p class="mj-p3">￥200.00</p>
+            </div>
+            <a href="#" class="mj-a1 f-r">查看商品</a>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <div class="ddxx-info3">
+   	  <h3 class="ddxx-if3-h31">帮你付款的小伙伴</h3>
+      <div class="ddxx-tab22 ddxx-tab21">
+          <table class="ddxx-tab2">
+              <tr>
+                <th align="center" valign="middle" scope="col">姓名</th>
+                <th align="center" valign="middle" scope="col">手机号</th>
+                <th align="center" valign="middle" scope="col">金额</th>
+                <th align="center" valign="middle" scope="col">支付日期</th>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">赵欣*</td>
+                <td align="center" valign="middle">153****6653</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2015-12-01</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">赵欣*</td>
+                <td align="center" valign="middle">153****6653</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2015-12-01</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">赵欣*</td>
+                <td align="center" valign="middle">153****6653</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2015-12-01</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">欣*欣</td>
+                <td align="center" valign="middle">188****6733</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2013-18-51</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">赵*欣</td>
+                <td align="center" valign="middle">135****6563</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2015-12-01</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">赵欣*</td>
+                <td align="center" valign="middle">153****6653</td>
+                <td align="center" valign="middle">￥100.00</td>
+                <td align="center" valign="middle">2015-12-01</td>
+              </tr>
+            </table>
+        </div>
+        <a href="javascript:;" class="ddxx-zs">展开</a>
+    </div>
+    
+    <div class="muji-info3">
+    	<p class="mj-if3p1">付款人信息</p>
+        <ul class="mj-if3ul1">
+        	<li>
+            	<p>我的姓名</p>
+                <input type="text" placeholder="请输入您的姓名" />
+                <div style="clear:both;"></div>
+            </li>
+        	<li>
+            	<p>手机号码</p>
+                <input type="text" placeholder="请输入您的手机号" />
+                <div style="clear:both;"></div>
+            </li>
+        	<li>
+            	<p>给他留言</p>
+                <input type="text" placeholder="刷我的卡，包你满足"></input>
+                <div style="clear:both;"></div>
+            </li>
+        </ul>
+        <div class="mj-if3box">
+        	<p class="mj-p4 f-l">付款金额</p>
+        	<p class="mj-p5 f-l">￥200.00</p>
+            <a href="#" class="mj-a2 f-r">修改</a>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <button class="muji-btn muji-btn1">微信安全支付</button>
+    <button class="muji-btn muji-btn2">支付宝支付</button>
+    <button class="muji-btn muji-btn3">我也要去玩</button>
+    <button class="muji-btn muji-btn3 muji-btn4">找小伙伴帮TA付款</button>
+    
+    
+    
+</body>
+</html>

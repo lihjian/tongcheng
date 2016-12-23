@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城帮助反馈详情</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>什么是我想要</a></h3>
+        <a href="#" class="sjsc-t1r f-r"><img src="images/sjsc-02.gif"></a>
+        <div style="clear:both;"></div>
+    </div>
+    <dl class="bzfk-dl2">
+    	<dt><a href="#">什么是我想要？</a></dt>
+        <dd>
+        	<p>我想要，就是用户分享募集连接，让朋友帮忙付款参与购买商品的网站，指用户花费1元兑换1个夺宝币，凭夺宝币可参与某件商品的众筹购买，同时作为回馈，用户可以获得网易网盘空间。</p>
+        	<p>商品分配对应数量的号码，每个号码价值1个夺宝币；当一件商品所有号码售出后，根据预先制定的规则计算出一个幸运号码，持有该号码的用户，直接获得该商品。</p>
+        </dd>
+    </dl>
+    
+    <div class="bzfk-tu1">
+    	<a href="#"><img src="images/sjsc-03.gif"></a>
+    </div>
+    
+
+</body>
+</html>

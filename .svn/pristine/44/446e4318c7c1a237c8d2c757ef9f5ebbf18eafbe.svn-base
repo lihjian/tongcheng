@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城首页</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="js/foot.js"></script>
+</head>
+
+<body>
+	
+    <div class="quanbu-top">
+    	<a href="#" class="qb-tleft f-l"><img src="images/sjsc-14.png"></a>
+        <div class="qb-tright f-r">
+        	<a href="#"><img src="images/sjsc-13.png"></a>
+        	<a href="#"><img src="images/sjsc-14-1.png"></a>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <ul class="quanbu-title1">
+    	<li class="current"><a href="#">首页</a></li>
+    	<li><a href="#">全部商品</a></li>
+    	<li><a href="#">正在募集</a></li>
+    	<li><a href="#">排行榜</a></li>
+    	<li><a href="#">晒单</a></li>
+        <div style="clear:both;"></div>
+    </ul>
+    
+    <div class="banner1" id="ban1">
+        <ul class="sy-ul">
+            <li><a href="#"><img src="images/sjsc27.jpg"></a></li>
+            <li><a href="#"><img src="images/sjsc27.jpg"></a></li>
+            <li><a href="#"><img src="images/sjsc27.jpg"></a></li>
+            <li><a href="#"><img src="images/sjsc27.jpg"></a></li>
+            <li><a href="#"><img src="images/sjsc27.jpg"></a></li>
+        </ul>
+        <ol class="sy-ol">
+        </ol>
+    </div>
+    
+    <div class="sy-info1">
+    	<ul class="sy-ul1">
+        	<li class="current"><a href="JavaScript:;">最新发起</a></li>
+        	<li><a href="JavaScript:;">最新成功</a></li>
+        	<li><a href="JavaScript:;">新品上架</a></li>
+        	<li><a href="JavaScript:;">销量最高</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="sy-qie">
+        	<ul class="sy-qieul sy-ul2">
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-1.gif"></a>
+                    </div>
+                    <p>募集价<span>￥3800.00</span></p>
+                    <p>进度<span>35%</span></p>
+                    <div class="sy-cs">
+                    	<div class="sy-hs"></div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-2.gif"></a>
+                    </div>
+                    <p>募集价<span>￥3800.00</span></p>
+                    <p>进度<span>35%</span></p>
+                    <div class="sy-cs">
+                    	<div class="sy-hs"></div>
+                    </div>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-3.gif"></a>
+                    </div>
+                    <p>募集价<span>￥3800.00</span></p>
+                    <p>进度<span>35%</span></p>
+                    <div class="sy-cs">
+                    	<div class="sy-hs"></div>
+                    </div>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+            <ul class="sy-qieul sy-ul3">
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-1.gif"></a>
+                    </div>
+                    <p>Anna</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-2.gif"></a>
+                    </div>
+                    <p>Liluly</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-3.gif"></a>
+                    </div>
+                    <p>Ammi</p>
+                    <p>2015-11-30</p>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+            <ul class="sy-qieul sy-ul3">
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-2.gif"></a>
+                    </div>
+                    <p>Liluly</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-1.gif"></a>
+                    </div>
+                    <p>Anna</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-3.gif"></a>
+                    </div>
+                    <p>Ammi</p>
+                    <p>2015-11-30</p>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+            <ul class="sy-qieul sy-ul3">
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-3.gif"></a>
+                    </div>
+                    <p>Ammi</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-1.gif"></a>
+                    </div>
+                    <p>Anna</p>
+                    <p>2015-11-30</p>
+                </li>
+            	<li>
+                	<div class="sy-tu1">
+                    	<a href="#"><img src="images/sjsc28-2.gif"></a>
+                    </div>
+                    <p>Liluly</p>
+                    <p>2015-11-30</p>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+        </div>
+    </div>
+    
+    
+	
+    <div class="ssjg" style="padding-bottom:0;">
+    	<ul class="ssjg-tit1">
+        	<li><a href="JavaScript:;">热门推荐</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <ul class="ssjg-ul1" style="padding-top:0;">
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-07.gif"></a>
+                </div>
+                <h3><a href="#">OPPO R7 Plus 全网通4G手机 双卡双待</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥2880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-08.gif"></a>
+                </div>
+                <h3><a href="#">The new Macbook 12英寸 标配 256G...</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥3880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-07.gif"></a>
+                </div>
+                <h3><a href="#">OPPO R7 Plus 全网通4G手机 双卡双待</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥2880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-08.gif"></a>
+                </div>
+                <h3><a href="#">The new Macbook 12英寸 标配 256G...</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥3880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-07.gif"></a>
+                </div>
+                <h3><a href="#">OPPO R7 Plus 全网通4G手机 双卡双待</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥2880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+        	<li>
+            	<div class="ssjg-tu">
+                	<a href="#"><img src="images/sjsc-08.gif"></a>
+                </div>
+                <h3><a href="#">The new Macbook 12英寸 标配 256G...</a></h3>
+                <dl class="ssjg-dl1">
+                	<dt>
+                    	<p class="ssjg-p1">募集价<span>￥3880.00</span></p>
+                    	<p class="ssjg-p2">销售量<span>4680</span></p>
+                    </dt>
+                    <dd><a href="#"><img src="images/sjsc-09.gif"></a></dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </li>
+            <div style="clear:both;"></div>
+        </ul>
+    </div>
+    
+    <div class="sy-ft">
+    	<div class="sy-ftif1">
+        	<table border="1" class="sy-tab1" bordercolor="#dbdbdb">
+              <tr>
+                <td align="center" valign="middle"><a href="#">首页</a></td>
+                <td align="center" valign="middle"><a href="#">什么是我想要？</a></td>
+                <td align="center" valign="middle"><a href="#">登录</a></td>
+                <td align="center" valign="middle"><a href="#">注册</a></td>
+              </tr>
+            </table>
+        </div>
+        <p class="sy-ft-p1">联系电话 400-666-8888</p>
+        <p class="sy-ft-p1">Copyright 2013-2015 我想要网站所有</p>
+        <p class="sy-ft-p1">ICP备 130001001  xxx科技有限公司</p>
+    </div>
+    
+    <!--返回顶部-->
+    <div class="sy-fanhui">
+    	<a href="JavaScript:;"><img src="images/sjsc29.gif"></a>
+    </div>
+    
+    <ul class="quanbu-ul1">
+    	<li class="current">
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-02.gif"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-15-1.gif"></a>
+            </div>
+            <a href="#" class="qu-ul1a">首页</a>
+        </li>
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-16.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-16-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">最新募集</a>
+        </li>
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-17.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-17-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">购物车</a>
+        </li>
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-18.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc18-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">我</a>
+        </li>
+        <div style="clear:both;"></div>
+    </ul>
+    
+</body>
+</html>

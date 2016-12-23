@@ -1,0 +1,24 @@
+/**
+ * 用户配置
+ */
+var SessionStorageUtil = {
+    "setUserId":function(){
+    	var val = SessionStorageUtil.getQueryString("userid");
+    	if(val){
+    		sessionStorage.yydb_userid = val;
+    	}else{
+    		sessionStorage.yydb_userid = 0;
+    	}
+    },
+    "getUserId":function(){
+    	return sessionStorage.yydb_userid;
+    },
+    "getQueryString":function(name){
+	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r!=null)return  unescape(r[2]); return null;
+	}
+   
+}
+
+SessionStorageUtil.setUserId();

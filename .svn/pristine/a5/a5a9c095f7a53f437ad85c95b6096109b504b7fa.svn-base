@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城搜索</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body style="min-height:555px;">
+	
+    <div class="sjsc-title2">
+    	<h3 class="sjsc-t2l">搜索商品</h3>
+        <a href="javascript:history.back();" class="sjsc-t2r"><</a>
+    </div>
+    
+    <div class="sc-search">
+    	<div class="search-box">
+        	<input type="text" placeholder="请输入要搜索的商品" class="box-ipt1 f-l" />
+        	<button class="box-btn1 f-l">搜索</button>
+            <div style="clear:both;"></div>
+        </div>
+        <ul class="scss-ul1">
+        	<li><a href="JavaScript:;">热门搜索</a></li>
+        	<li><a href="JavaScript:;">手机</a></li>
+        	<li><a href="JavaScript:;">苹果</a></li>
+        	<li><a href="JavaScript:;">华为</a></li>
+        	<li><a href="JavaScript:;">小米</a></li>
+        	<li><a href="JavaScript:;">三星</a></li>
+        	<li><a href="JavaScript:;">OPPO</a></li>
+        	<li><a href="JavaScript:;">金立</a></li>
+        	<li><a href="JavaScript:;">大哥大</a></li>
+        </ul>
+    </div>
+    
+    <div class="sc-ft">
+    	<p>什么是我想要？</p>
+    	<p>ICP证浙A2-20151105 我想要公司版权所有©1997-2015</p>
+    </div>
+</body>
+</html>

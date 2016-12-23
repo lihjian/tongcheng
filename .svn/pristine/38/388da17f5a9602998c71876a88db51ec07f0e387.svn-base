@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城帮助反馈</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>帮助与反馈</a></h3>
+        <!--<a href="#" class="sjsc-t1r f-r">保存</a>-->
+        <div style="clear:both;"></div>
+    </div>
+    <dl class="bzfk-dl1">
+    	<dt>常见问题</dt>
+        <dd>
+        	<ul class="bzfk-ul1">
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            	<li><a href="#">如何查询我想要中募集的商品是否成功？</a></li>
+            	<li><a href="#">什么是我想要？</a></li>
+            	<li><a href="#">我想要怎么募集？</a></li>
+            	<li><a href="#">我想要是什么模式的购物商城？</a></li>
+            </ul>
+        </dd>
+    </dl>
+    
+    <div class="bzfk-ft">
+    	<a href="javascript:;" class="bzfk-a1"><img src="images/sjsc-01.gif">意见反馈</a>
+    </div>
+    
+    <div class="bzft-tc">
+    	<div class="tc-yy1"></div>
+    	<div class="bzft-tc-con">
+        	<ul class="tc-ul1">
+            	<li>
+                    <p>标　　题</p>
+                    <input type="text" placeholder="请输入标题" >
+                    <div style="clear:both;"></div>
+                </li>
+                <li>
+                    <p>内　　容</p>
+                    <textarea placeholder="请输入内容"></textarea>
+                    <div style="clear:both;"></div>
+                </li>
+                <li>
+                    <p>联系方式</p>
+                    <input type="text" placeholder="请输入联系方式" >
+                    <div style="clear:both;"></div>
+                </li>
+                <li>
+                    <p>姓　　名</p>
+                    <input type="text" placeholder="请输入姓名" >
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
+        	<button class="tc-btn1">提交</button>
+        </div>
+    </div>
+
+</body>
+</html>

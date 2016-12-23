@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>购买记录</title>
+		<link rel="stylesheet" href="plug/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/orders.css" />
+		
+	</head>
+	<body ng-app="myapp" ng-controller="myctrl">
+		<header>
+    		<a class="fa fa-angle-left col-xs-1" href="javascript:history.back();"></a><span class="col-xs-10">购买记录</span><i class="col-xs-1"></i>
+		</header>
+
+		<div class="z_container">
+			<div class="z_scroll">
+			<div class="order_list" ng-repeat="key in dataarr">
+				
+					<ul>
+						<li class="times" ng-bind="key.createDate"></li>
+						<li class="status" ng-bind="key.status"></li>
+					</ul>
+				
+				<div class="o_line"></div>
+				<div class="details">
+					<dl>
+						<dt><img ng-src="{{key.facePic}}"/></dt>
+						<dd>
+							<p class="title" ng-bind="key.username"></p>
+							<p class="price" ng-bind="key.storename"></p>
+							<p class="setbacks" ng-hide="key.full">进度：<i><b ng-style="key.percentwidthstyle"></b></i><span ng-bind="key.percent"></span></p>
+							<p class="wintime" ng-hide="key.setback">揭晓时间：<span ng-bind="key.winListDate"></span></p>
+						</dd>
+					</dl>
+				</div>
+				<div class="o_line"></div>
+				
+					<ul>
+						<li class="order_code">第<span ng-bind="key.period"></span>期</li>
+						
+					</ul>
+				
+			</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="plug/iscroll/js/iscroll.js" ></script>
+	<script type="text/javascript" src="plug/angularJS/angular.min.js" ></script>
+	<script type="text/javascript" src="js/woxiangyao.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script type="text/javascript" src="js/sessionStorageUtil.js" ></script>
+	<script type="text/javascript" src="js/versionInfo.js"></script>
+	<script type="text/javascript" src="js/order.js" ></script>
+</html>

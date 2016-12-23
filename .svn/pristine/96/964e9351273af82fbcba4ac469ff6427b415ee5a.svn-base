@@ -1,0 +1,914 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城我的订单</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+</head>
+
+<body>
+	
+    
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>我的订单</a></h3>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <ul class="quanbu-title2">
+    	<li class="current"><a href="JavaScript:;">全部</a></li>
+    	<li><a href="JavaScript:;">募集中</a></li>
+    	<li><a href="JavaScript:;">募集成功</a></li>
+    	<li><a href="JavaScript:;">募集失败</a></li>
+        <div style="clear:both;"></div>
+    </ul>
+	
+    <div class="my-dd">
+    	<div class="my-info">
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="my-info" style="display:none;">
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        	<div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r">募集中</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">50%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">发起募集</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="my-info" style="display:none;">
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#2E8C00;">募集成功</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs" style="width:100%;"></div>
+                            </div>
+                            <p class="jdt-shuzi f-l">100%</p>
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">我要晒单</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>        	
+        </div>
+        <div class="my-info" style="display:none;">
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="my-k1">
+            	<ul class="my-p1">
+                	<li class="my-spl f-l">2015-11-30 18:20:15</li>
+                	<li class="my-spr f-r" style="color:#E64D5D;">募集失败</li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <dl class="my-dl1">
+                	<dt><a href="#"><img src="images/sjsc-08.gif"></a></dt>
+                    <dd>
+                    	<h3><a href="#">The new Macbook 12英寸 标配 256G闪存</a></h3>
+                        <p class="my-dp1">价格：<span>￥2888.00</span></p>
+                        <div class="my-jdt">
+                        	<p class="jdt-p1 f-l">进度：</p>
+                            <div class="jtd-bg f-l">
+                            	<div class="jdt-cs"></div>
+                            </div>
+                            <!--<p class="jdt-shuzi f-l">50%</p>-->
+                    		<div style="clear:both;"></div>
+                        </div>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+                <div class="my-p2">
+                	<span class="my-sp3 f-l">订单号：13526202226679</span>
+                    <button class="my-btn1 f-r">重新发起</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>        	
+        </div>
+    </div>
+    
+    
+    <ul class="quanbu-ul1">
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-02.gif"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-15-1.gif"></a>
+            </div>
+            <a href="#" class="qu-ul1a">首页</a>
+        </li>
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-16.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-16-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">最新募集</a>
+        </li>
+    	<li>
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-17.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc-17-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">购物车</a>
+        </li>
+    	<li class="current">
+        	<div class="qu-tu1">
+            	<a href="#" class="atu1"><img src="images/sjsc-18.png"></a>
+            	<a href="#" class="atu2"><img src="images/sjsc18-1.png"></a>
+            </div>
+            <a href="#" class="qu-ul1a">我</a>
+        </li>
+        <div style="clear:both;"></div>
+    </ul>
+    
+</body>
+</html>

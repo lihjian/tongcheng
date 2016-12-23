@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+    <style>
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<input type="hidden" id="storeId" name="storeId"/>
+<div class="quanbu-top">
+    <div class="sjsc-title2" style="background-color: transparent;border: none;">
+        <h3 class="sjsc-t2l" >商品详情</h3>
+        <a href="javascript:history.back();" class="sjsc-t2r"><</a>
+
+    </div>
+</div>
+    <div class="banner1" id="ban1" style="margin-top: 50px">
+        <div class="swiper-wrapper" id="imgDiv">
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+            <div class="swiper-slide"><img src="img/example-slide-1.jpg"></div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <input type="hidden" id="periodId">
+    <div class="spxq-info1">
+    	<ul class="spxq-ul1">
+        	<li>
+            	<h3><a href="#" id="storeName"><span></span></a></h3>
+                <div>
+                    <p class="spxq-p1" id="period">期数：<span></span></p>
+                	<p class="spxq-p1" id="price">价格：<span></span></p>
+
+                    <div style="clear:both;"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="spxq-if1" style="text-align: left" >
+            <p class="ssjg-p1" id="jd">进度<span></span></p>
+        </div>
+        <div class="spxq-if1" >
+            <div class="sy-cs" style="background:#F3F3F3;" id="t_jd">
+                <div class="sy-hs" style="position: inherit" id="jdt"></div>
+            </div>
+        </div>
+        <div id="rs-div">
+
+        </div>
+    </div>
+    <div class="spxq-info2">
+    	<ul class="spxq-ul2">
+        	<li class="current"><a href="JavaScript:;void(0)">图文详情</a></li>
+        	<li><a href="JavaScript:void(0)">往期揭晓</a></li>
+            <li><a href="JavaScript:void(0)">所有参与者</a></li>
+        	<li><a href="JavaScript:void(0)">晒单分享</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="spxq-box">
+        	<div class="spxq-k spxq-k1">
+
+            </div>
+            <div class="spxq-k spxq-k2" style="display:none;">
+            	<div class="k2-if" >
+                    <ul class="gwc-ul1 list" id="wqjx">
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="spxq-k spxq-k3" style="display:none;">
+                <div class="k3-if1">
+                    <ul class="gwc-ul1 list" id="sycy">
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="spxq-k spxq-k4" style="display:none;">
+                <div class="k3-if1">
+                    <ul class="gwc-ul1 list" id="sdfx">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spxq-info3">
+
+    </div>
+
+</body>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/woxiangyao.js"></script>
+<script type="text/javascript" src="js/sessionStorageUtil.js"></script>
+<script type="text/javascript" src="js/foot.js"></script>
+<script type="text/javascript" src="js/versionInfo.js"></script>
+<script type="text/javascript" src="js/storeInfo.js"></script>
+<script type="text/javascript" src="js/swiper-3.4.0.min.js"></script>
+
+<script type="text/javascript">
+   var id = $.getUrlParam("id");
+   $.loadStoreInfo(id,channelLink.code,channelLink.ciphertext);
+
+</script>
+</html>

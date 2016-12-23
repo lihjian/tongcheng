@@ -1,0 +1,15 @@
+<div class="quanbu-top">
+	<a  class="qb-tleft f-l"><i class="fa fa-list"></i><span>宝贝列表</span></a>
+	
+	<div class="qb-tright f-r">
+		
+	</div>
+	<div style="clear:both;"></div>
+	<script type="text/javascript">
+		$(".quanbu-top .f-l").on( "touchstart",function(){
+			var times = new Date().getTime();
+			window.location.href = "classify.html?" + times;
+		})
+		
+	</script>
+</div>

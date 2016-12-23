@@ -1,0 +1,64 @@
+.revise_details {
+  overflow: hidden;
+  width: 90%;
+  background: white;
+  border-radius: 3px;
+  border: 1px #dedede solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  z-index: 1200;
+  padding: 10px; }
+  .revise_details .add_address {
+    width: 100%;
+    margin: 5px auto;
+    overflow: hidden;
+    background: white;
+    padding: 5px 8px; }
+    .revise_details .add_address .z_title {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 18px; }
+    .revise_details .add_address .addressinfo {
+      height: 24px;
+      line-height: 24px; }
+      .revise_details .add_address .addressinfo p {
+        padding: 0; }
+      .revise_details .add_address .addressinfo input {
+        padding: 0;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px; }
+      .revise_details .add_address .addressinfo input[type=radio], .revise_details .add_address .addressinfo input[type=checkbox] {
+        margin: 2px 0 0 0; }
+    .revise_details .add_address .name, .revise_details .add_address .phone, .revise_details .add_address .addressdetail, .revise_details .add_address .postcodes {
+      border: none; }
+    .revise_details .add_address .province, .revise_details .add_address .city, .revise_details .add_address .district {
+      margin-right: 0; }
+    .revise_details .add_address .o_line {
+      height: 1px;
+      width: 100%;
+      background: #DEDEDE; }
+    .revise_details .add_address .save {
+      height: 20px;
+      line-height: 20px;
+      margin: 10px auto 0 auto;
+      width: 50%;
+      background: #CC3333;
+      color: white;
+      border-radius: 6px;
+      text-align: center; }
+
+.mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333333;
+  opacity: 0.3;
+  z-index: 14; }
+
+/*# sourceMappingURL=revise.css.map */

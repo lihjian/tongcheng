@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城新增收货地址</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>新增地址</a></h3>
+        <button class="sjsc-btn1 f-r">保存</button>
+        <div style="clear:both;"></div>
+    </div>
+    
+    <ul class="xzdz-ul1">
+    	<li>
+        	<p class="xzdz-p1 f-l">收货人</p>
+            <input type="text" placeholder="姓名" class="xzdz-ipt1 f-l" />
+            <div style="clear:both;"></div>            
+        </li>
+    	<li>
+        	<p class="xzdz-p1 f-l">手机号</p>
+            <input type="text" placeholder="11位手机号" class="xzdz-ipt1 f-l" />
+            <div style="clear:both;"></div>            
+        </li>
+    	<li>
+        	<p class="xzdz-p1 f-l">地区信息</p>
+            <div class="xzdz-ipt2box f-l">
+            	<input type="text" placeholder="省" class="xzdz-ipt2 f-l" />
+            	<input type="text" placeholder="市" class="xzdz-ipt2 f-l" />
+            	<input type="text" placeholder="区" class="xzdz-ipt2 f-l" />
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>            
+        </li>
+    	<li>
+        	<p class="xzdz-p1 f-l">详细地址</p>
+            <input type="text" placeholder="街道门牌信息" class="xzdz-ipt1 f-l" />
+            <div style="clear:both;"></div>            
+        </li>
+    	<li>
+        	<p class="xzdz-p1 f-l">邮政编码</p>
+            <input type="text" placeholder="邮政编码" class="xzdz-ipt1 f-l" />
+            <div style="clear:both;"></div>            
+        </li>
+    </ul>
+    
+</body>
+</html>

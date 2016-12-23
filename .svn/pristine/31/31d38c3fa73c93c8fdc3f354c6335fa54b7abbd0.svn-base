@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>我想要手机商城个人资料</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shoujisc.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+    <div class="sjsc-title1">
+    	<h3 class="sjsc-t1l f-l"><a href="JavaScript:;"><span><</span>个人信息</a></h3>
+        <a href="#" class="sjsc-t1r f-r">编辑</a>
+        <div style="clear:both;"></div>
+    </div>
+    <ul class="grzl-ul1">
+    	<li>
+        	<p class="grzl-pl f-l">头像</p>
+        	<p class="grzl-pr grzl-pr1 f-r"><img src="images/sjsc-04.png"></p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">昵称</p>
+        	<p class="grzl-pr f-r">xiaoliang</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">微信号</p>
+        	<p class="grzl-pr f-r">weixinhao</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">qq号</p>
+        	<p class="grzl-pr f-r">111222000</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">微博</p>
+        	<p class="grzl-pr f-r">weibohao</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">密码</p>
+        	<p class="grzl-pr f-r">mimamima</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">邮箱</p>
+        	<p class="grzl-pr f-r">youxiang@163.com</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">手机号</p>
+        	<p class="grzl-pr f-r">15011223344</p>
+            <div style="clear:both;"></div>
+        </li>
+    	<li>
+        	<p class="grzl-pl f-l">推广码</p>
+        	<p class="grzl-pr f-r">http://tuiguangmalianjie.com</p>
+            <div style="clear:both;"></div>
+        </li>
+    </ul>
+
+</body>
+</html>
